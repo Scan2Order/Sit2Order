@@ -25,6 +25,25 @@
                             </div>
                         </div>
 
+                                <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="gender" id="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="others">Others</option>
+                                </select>
+
+                                @error('gender')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -37,6 +56,20 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+                        
+                        <div class="col-md-6">
+                        <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" required >
+                        
+                        @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        </div>
                         </div>
 
                         <div class="form-group row">

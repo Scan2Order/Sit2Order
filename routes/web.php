@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/bosskur', function () {
     return view('welcome');
+});
+
+
+Route::get('/', function () {
+    return redirect('/register');
 });
 
 Auth::routes();

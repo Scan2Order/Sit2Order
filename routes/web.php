@@ -22,6 +22,15 @@ Route::get('/', function () {
     return redirect('/register');
 });
 
+Route::get('/mamak', function () {
+    return redirect('/restaurant-menu');
+})->middleware('auth');
+
+Route::get('/menu', function () {
+    return view('menu');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

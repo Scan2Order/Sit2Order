@@ -27,7 +27,7 @@ Route::get('/mamak', function () {
 })->middleware('auth');
 
 Route::get('/menu', function () {
-    return view('menu');
+    return view('Restaurant/RestaurantMenuShow');
 });
 
 

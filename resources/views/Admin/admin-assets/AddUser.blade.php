@@ -1,6 +1,7 @@
 @extends('layouts.app2')
+
 @section('content')
 <div>
-  <h1>Admin Dashboard</h1>
+  <h1>User Add</h1>
 </div>
 @endsection

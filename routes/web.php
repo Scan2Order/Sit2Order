@@ -26,9 +26,7 @@ Route::get('/mamak', function () {
     return redirect('/restaurant-menu');
 })->middleware('auth');
 
-Route::get('/menu', function () {
-    return view('Restaurant/RestaurantMenuShow');
-});
+Route::get('/menu', 'ProductController@getAllProducts');
 
 Route::get('/addmenu', function () {
     return view('Restaurant/RestaurantMenuAdd');
@@ -41,7 +39,8 @@ Route::get('/admin', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('User/home');
+Route::get('/profile/{id}', 'UserProfileController@index')->name('User/home');
 
 Route::get('/admin/user', function () {
     return view('Admin/admin-assets/AddUser');

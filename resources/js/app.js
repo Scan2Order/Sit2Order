@@ -23,10 +23,7 @@ Vue.component(
     "example-component",
     require("./components/ExampleComponent.vue").default
 );
-Vue.component(
-    "restaurant-menu",
-    require("./components/RestaurantMenu.vue").default
-);
+Vue.component("rest-menu", require("./components/RestaurantMenu.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

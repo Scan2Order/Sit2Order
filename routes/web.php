@@ -13,9 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/bosskur', function () {
     return view('welcome');
 });
+
+
+Route::get('/', function () {
+    return redirect('/register');
+});
+
+Route::get('/mamak', function () {
+    return redirect('/restaurant-menu');
+})->middleware('auth');
+
+Route::get('/menu', function () {
+    return view('Restaurant/RestaurantMenuShow');
+});
+
 
 Auth::routes();
 

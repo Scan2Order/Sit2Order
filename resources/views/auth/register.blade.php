@@ -24,6 +24,25 @@
                             </div>
                         </div>
 
+                                <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="gender" id="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="others">Others</option>
+                                </select>
+
+                                @error('gender')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group row">
 
                             <div class="col-md-12">
@@ -38,6 +57,21 @@
                         </div>
 
                         <div class="form-group row">
+                        <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+                        
+                        <div class="col-md-6">
+                        <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" required >
+                        
+                        @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                        </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-12">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">

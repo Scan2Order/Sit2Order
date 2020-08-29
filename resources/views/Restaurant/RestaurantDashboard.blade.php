@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app3')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
         <div class="card-header">{{ __('Dashboard') }}</div>
 
         <div class="card-body">
-          <h1>Admin Dashboard</h1>
+          <h1>Restaurant Dashboard</h1>
         </div>
       </div>
     </div>

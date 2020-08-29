@@ -1956,7 +1956,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     console.log(this.products);
   },
-  props: ["name", "description", "price"]
+  props: ["name", "description", "price", "categories"]
 });
 
 /***/ }),
@@ -37602,16 +37602,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
     _c("div", { staticClass: "card-body" }, [
+      _c("h1", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.categories))]),
+      _vm._v(" "),
       _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.name))]),
       _vm._v(" "),
       _c("p", { staticClass: "card-text" }, [_vm._v(_vm._s(_vm.description))]),
       _vm._v(" "),
       _c("p", { staticClass: "card-text" }, [
-        _vm._v(_vm._s(String(_vm.price)))
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-        _vm._v("Go somewhere")
+        _vm._v("RM " + _vm._s(String(_vm.price)))
       ])
     ])
   ])

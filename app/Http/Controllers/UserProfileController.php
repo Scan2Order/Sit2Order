@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 class UserProfileController extends Controller
 {
-    public function show($name)
+    public function __construct()
     {
-        return $name;
+        $this->middleware('role:user');
+    }
+
+    public function index()
+    {
+        return view('User/home');
     }
 }

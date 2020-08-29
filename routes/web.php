@@ -39,8 +39,9 @@ Route::get('/admin', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('User/home');
-Route::get('/profile/{id}', 'UserProfileController@index')->name('User/home');
+Route::get('/user', 'UserProfileController@index')->name('home');
+Route::get('/restaurant', 'RestaurantController@index')->name('Restaurantdashboard');
+Route::get('/admin', 'AdminController@index')->name('AdminDashboard');
 
 Route::get('/admin/user', function () {
     return view('Admin/admin-assets/AddUser');

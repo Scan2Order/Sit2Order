@@ -27,10 +27,12 @@ class LoginController extends Controller
      *
      * @var string
      */
+    protected $redirectTo = RouteServiceProvider::HOME;
+
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('superadministrator')) {
-            return redirect('/admin');
+            return redirect('/superadministrator');
         }
 
         if ($user->hasRole('restaurant')) {
@@ -38,7 +40,7 @@ class LoginController extends Controller
         }
 
         if ($user->hasRole('user')) {
-            return redirect('/user');
+            $redirectTo = RouteServiceProvider::HOME;
         }
     }
 

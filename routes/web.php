@@ -28,9 +28,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
+//User Routes
 Route::get('/user', 'UserProfileController@index')->name('user');
 
+
+//Admin Routes
+Route::get('/admin/dashboard', 'UserShowController@getAllUsers')->name('AdminDashboard');
 
 Route::get('/admin/user', function () {
     return view('Admin/admin-assets/AddUser');
@@ -40,14 +43,17 @@ Route::get('/admin/restaurant', function () {
     return view('Admin/admin-assets/AddRestaurant');
 })->name('AddRestaurant');
 
-// Route::get('/admin/dashboard', function () {
-//     return view('Admin/AdminDashboard');
-// })->name('AdminDashboard');
+//Restaurant Routes
+Route::get('/restaurant/dashboard', 'RestaurantController@index')->name('RestaurantDashboard');
 
-Route::get('/admin/dashboard', 'UserShowController@getAllUsers')->name('AdminDashboard');
+Route::get('/restaurant/addmenu', function () {
+    return view('Restaurant/RestaurantMenuAdd');
+})->name('RestaurantMenuAdd');
 
+
+//Auth Route in group
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/menu', 'ProductController@getAllProducts');
     Route::get('/restaurant', 'RestaurantController@index')->name('home');
-    Route::get('/superadministrator', 'AdminController@index')->name('superadministrator');
+    Route::get('/superadministrator', 'UserShowController@getAllUsers')->name('superadministrator');
 });

@@ -42,13 +42,10 @@
           <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('AdminDashboard') }}">{{ __('Dashboard') }}</a>
+              <a class="nav-link" href="{{ route('RestaurantDashboard') }}">{{ __('Dashboard') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('AddUser') }}">{{ __('User') }}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('AddRestaurant') }}">{{ __('Restaurant') }}</a>
+              <a class="nav-link" href="{{ route('RestaurantMenuAdd') }}">{{ __('Add Product') }}</a>
             </li>
 
             <li class="nav-item dropdown">

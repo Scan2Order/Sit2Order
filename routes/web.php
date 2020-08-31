@@ -22,6 +22,10 @@ Route::get('/', function () {
     return redirect('/register');
 });
 
+Route::get('/menu', function () {
+    return view('Restaurant.restaurantMenu');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

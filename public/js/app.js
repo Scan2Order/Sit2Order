@@ -2026,6 +2026,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log(this.products);
@@ -37781,7 +37783,9 @@ var render = function() {
       _vm._v(" "),
       _c("p", { staticClass: "card-text" }, [
         _vm._v("RM " + _vm._s(String(_vm.price)))
-      ])
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [_vm._v("LOL")])
     ])
   ])
 }

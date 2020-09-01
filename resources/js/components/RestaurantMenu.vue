@@ -1,13 +1,10 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">I'm an example component.</div>
-                </div>
-            </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h1 class="card-title">{{ categories }}</h1>
+            <h5 class="card-title">{{ name }}</h5>
+            <p class="card-text">{{ description }}</p>
+            <p class="card-text">RM {{ String(price) }}</p>
         </div>
     </div>
 </template>
@@ -15,7 +12,9 @@
 <script>
 export default {
     mounted() {
-        console.log("Component mounted.");
-    }
+        console.log(this.products);
+    },
+
+    props: ["name", "description", "price", "categories"]
 };
 </script>

@@ -23,9 +23,14 @@ Vue.component(
     "example-component",
     require("./components/ExampleComponent.vue").default
 );
+Vue.component("rest-menu", require("./components/RestaurantMenu.vue").default);
 Vue.component(
-    "restaurant-menu",
-    require("./components/RestaurantMenu.vue").default
+    "user-show",
+    require("./components/Admin/AdminDashUser.vue").default
+);
+Vue.component(
+    "rest-show",
+    require("./components/Admin/AdminDashRest.vue").default
 );
 
 /**

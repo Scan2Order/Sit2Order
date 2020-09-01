@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class RestaurantController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:superadministrator');
+        $this->middleware('role:restaurant');
     }
 
     public function index()
     {
-        return view('Admin/AdminDashboard');
+        return view('Restaurant/RestaurantDashboard');
     }
 }

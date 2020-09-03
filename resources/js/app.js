@@ -25,6 +25,10 @@ Vue.component(
 );
 Vue.component("rest-menu", require("./components/RestaurantMenu.vue").default);
 Vue.component(
+    "dash-menu",
+    require("./components/Restaurant/DashboardMenu.vue").default
+);
+Vue.component(
     "user-show",
     require("./components/Admin/AdminDashUser.vue").default
 );

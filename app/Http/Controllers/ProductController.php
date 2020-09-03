@@ -15,9 +15,25 @@ class ProductController extends Controller
     public function getAllProducts()
     {
         $products = product::get();
-        //if you want to get contacts on where condition use below code
-        //$contacts = Contact::Where('tenant_id', "1")->get();
-        // dd($products);
         return view('Restaurant.RestaurantMenuShow', ['products' => $products]);
+    }
+
+    public function store()
+    {
+        // request()->validate([
+        //     'name' => 'required',
+        //     'categories' => 'required',
+        //     'price' => 'required',
+
+        // ]);
+
+        product::create([
+            'name' => request('name'),
+            'description' => request('description'),
+            'categories' => request('categories'),
+            'price' => request('price'),
+        ]);
+
+        return redirect('/restaurant/menu');
     }
 }

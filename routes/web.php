@@ -50,6 +50,10 @@ Route::get('/restaurant/addmenu', function () {
     return view('Restaurant/RestaurantMenuAdd');
 })->name('RestaurantMenuAdd');
 
+Route::post('/restaurant/addmenu', 'ProductController@store');
+
+Route::get('/restaurant/menu', 'RestaurantController@getAllProducts')->name('RestaurantDashMenu');
+
 
 //Auth Route in group
 Route::group(['middleware' => 'auth'], function () {

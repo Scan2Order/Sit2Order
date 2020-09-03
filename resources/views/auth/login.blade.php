@@ -54,11 +54,6 @@
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">
                                     {{ __('Login') }}
                                 </button>
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </button>
-                                    <div>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link col-md-8 offset-md-2" href="{{ route('password.request') }}">
@@ -66,6 +61,11 @@
                                     </a>
                                 @endif
                             </div>
+                            <div class="col-md-8 offset-md-2">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </button>
+                            <div>
                         </div>
                     </form>
                 </div>

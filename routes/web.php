@@ -22,7 +22,9 @@ Route::get('/', function () {
     return redirect('/register');
 });
 
-
+Route::get('Shopping cart', function (){
+    return view('/Restaurant.ShoppingCart');
+});
 
 
 

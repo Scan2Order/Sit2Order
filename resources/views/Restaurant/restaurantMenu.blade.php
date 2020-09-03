@@ -4,5 +4,6 @@
  @section('content')
 
  <h1>Restaurant Menu</h1>
-<Restaurant></Restaurant>
+ <p>Menu food</p>
+
  @endsection

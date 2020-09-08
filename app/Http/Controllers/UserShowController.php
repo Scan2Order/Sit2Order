@@ -29,7 +29,6 @@ class UserShowController extends Controller
     public function showUserCount()
     {
         $users = User::get();
-        $userCount = User::count();
-        return view('Admin.admin-assets.AddUser', ['users' => $users, 'userCount' => $userCount]);
+        return view('Admin.admin-assets.AddUser', ['users' => $users]);
     }
 }

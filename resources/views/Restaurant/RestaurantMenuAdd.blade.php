@@ -8,8 +8,8 @@
         <div class="card-header">{{ __('Add product to menu') }}</div>
 
         <div class="card-body">
-          <form method="POST" action="{{ route('register') }}">
-            @csrf
+          <form method="POST" action="/restaurant/addmenu">
+            {{ csrf_field() }}
 
             <div class="form-group row">
               <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -26,50 +26,32 @@
             </div>
 
             <div class="form-group row">
-              <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Categories') }}</label>
+              <label for="categories" class="col-md-4 col-form-label text-md-right">{{ __('Categories') }}</label>
 
               <div class="col-md-6">
-                <select class="form-control" name="gender" id="gender" required>
+                <select class="form-control" name="categories" id="categories" required>
                   <option value="">Select Categories</option>
-                  <option value="male">Roti</option>
-                  <option value="female">Nasi</option>
-                  <option value="female">Goreng</option>
-                  <option value="others">Minuman</option>
+                  <option value="Roti">Roti</option>
+                  <option value="Nasi">Nasi</option>
+                  <option value="Goreng">Goreng</option>
+                  <option value="Minuman">Minuman</option>
                 </select>
-
-                @error('gender')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+              <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
               <div class="col-md-6">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                <input id="description" type="text" class="form-control" name="description" required autocomplete="description">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+              <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
 
               <div class="col-md-6">
-                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" required>
-
-                @error('phone')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                <input id="price" type="number" class="form-control" name="price" required step="0.01">
               </div>
             </div>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UserShowController extends Controller
 {
@@ -15,9 +16,19 @@ class UserShowController extends Controller
     public function getAllUsers()
     {
         $users = User::get();
-        //if you want to get contacts on where condition use below code
-        //$contacts = Contact::Where('tenant_id', "1")->get();
-        // dd($products);
-        return view('Admin.AdminDashboard', ['users' => $users]);
+        $userCount = User::count();
+        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount]);
+    }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
+        return redirect()->route('/Admin/AdminAddUser')->with('success', 'User Has been deleted');
+    }
+
+    public function showUserCount()
+    {
+        $users = User::get();
+        return view('Admin.admin-assets.AddUser', ['users' => $users]);
     }
 }

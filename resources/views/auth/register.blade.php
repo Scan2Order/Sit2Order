@@ -24,8 +24,12 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+=======
+                                <div class="form-group row">
+>>>>>>> 80cba47e39c0251910b68580c37dd27e819bf3d7
 
                             <div class="col-md-12">
                                 <select class="form-control" name="gender" id="gender" required>

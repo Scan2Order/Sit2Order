@@ -35,10 +35,11 @@ Route::get('/user', 'UserProfileController@index')->name('user');
 //Admin Routes
 Route::get('/admin/dashboard', 'UserShowController@getAllUsers')->name('AdminDashboard');
 Route::get('/admin/user', 'UserShowController@getAllUsers');
+Route::get('/admin/dashboard/user', 'UserShowController@showUserCount')->name('AddUser');
 
-Route::get('/admin/user', function () {
-    return view('Admin/admin-assets/AddUser');
-})->name('AddUser');
+// Route::get('/admin/user', function () {
+//     return view('Admin/admin-assets/AddUser');
+// })->name('AddUser');
 
 Route::get('/admin/restaurant', function () {
     return view('Admin/admin-assets/AddRestaurant');
@@ -50,6 +51,10 @@ Route::get('/restaurant/dashboard', 'RestaurantController@index')->name('Restaur
 Route::get('/restaurant/addmenu', function () {
     return view('Restaurant/RestaurantMenuAdd');
 })->name('RestaurantMenuAdd');
+
+Route::post('/restaurant/addmenu', 'ProductController@store');
+
+Route::get('/restaurant/menu', 'RestaurantController@getAllProducts')->name('RestaurantDashMenu');
 
 
 //Auth Route in group

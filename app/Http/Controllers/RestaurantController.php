@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\product;
 
 class RestaurantController extends Controller
 {
@@ -14,5 +15,11 @@ class RestaurantController extends Controller
     public function index()
     {
         return view('Restaurant/RestaurantDashboard');
+    }
+
+    public function getAllProducts()
+    {
+        $products = product::get();
+        return view('Restaurant.RestaurantDashMenu', ['products' => $products]);
     }
 }

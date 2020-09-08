@@ -25,6 +25,9 @@
                         </div>
 
                                 <div class="form-group row">
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
 
                             <div class="col-md-12">
                                 <select class="form-control" name="gender" id="gender" required>

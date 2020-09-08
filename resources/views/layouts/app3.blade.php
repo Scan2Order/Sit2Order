@@ -45,6 +45,9 @@
               <a class="nav-link" href="{{ route('RestaurantDashboard') }}">{{ __('Dashboard') }}</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ route('RestaurantDashMenu') }}">{{ __('Menu') }}</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ route('RestaurantMenuAdd') }}">{{ __('Add Product') }}</a>
             </li>
 

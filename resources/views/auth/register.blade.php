@@ -56,10 +56,10 @@
                         </div>
 
                         <div class="form-group row">
-                        
+
                         <div class="col-md-12">
                         <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Phone Number" required >
-                        
+
                         @error('phone')
                         <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

@@ -26,10 +26,10 @@ class UserShowController extends Controller
         return redirect()->route('/Admin/AdminAddUser')->with('success', 'User Has been deleted');
     }
 
-    public function apiztakensem()
+    public function showUserCount()
     {
         $users = User::get();
         $userCount = User::count();
-        return view('Admin.totalUser', ['users' => $users, 'userCount' => $userCount]);
+        return view('Admin.admin-assets.AddUser', ['users' => $users, 'userCount' => $userCount]);
     }
 }

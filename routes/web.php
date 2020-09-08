@@ -35,7 +35,7 @@ Route::get('/user', 'UserProfileController@index')->name('user');
 //Admin Routes
 Route::get('/admin/dashboard', 'UserShowController@getAllUsers')->name('AdminDashboard');
 Route::get('/admin/user', 'UserShowController@getAllUsers');
-Route::get('/admin/dashboard/user', 'UserShowController@apiztakensem')->name('AddUser');
+Route::get('/admin/dashboard/user', 'UserShowController@showUserCount')->name('AddUser');
 
 // Route::get('/admin/user', function () {
 //     return view('Admin/admin-assets/AddUser');

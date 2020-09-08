@@ -1,14 +1,40 @@
 @extends('layouts.app2')
 
 @section('content')
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-header">{{ __('Dashboard') }}</div>
+<div class="">
+  <div class="">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="basecard">
+          <div class="card-header">{{ __('Dashboard') }}</div>
 
-        <div class="card-body">
-          <h1>Admin Dashboard</h1>
+          <div class="card-body">
+            <h1>Admin Dashboard</h1>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th style="width: 5%;">ID</th>
+        <th >Name</th>
+        <th >Email</th>
+        <th >Gender</th>
+        <th >Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($users as $user)
+      <tr>
+       <th style="width: 5%;">{{$user->id}}</th>
+       <td class="norm-space">{{$user->name}}</td>
+       <td class="norm-space">{{$user->email}}</td>
+       <td class="norm-space">{{$user->gender}}</td>
+       <td class="norm-space">{{$user->phone}}</td>
+     </tr>
+     @endforeach
+
+    </tbody>
+  </table>
+          </div>
         </div>
       </div>
     </div>

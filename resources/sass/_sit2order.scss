@@ -1,0 +1,14 @@
+.basecard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 50rem;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    background: rgba(255,255,255,0.8);
+    border: none;
+
+}

@@ -36,6 +36,14 @@ Vue.component(
     "rest-show",
     require("./components/Admin/AdminDashRest.vue").default
 );
+Vue.component(
+    "user-total",
+    require("./components/Admin/totalUser.vue").default
+);
+Vue.component(
+    "rest-total",
+    require("./components/Admin/totalRestaurant.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

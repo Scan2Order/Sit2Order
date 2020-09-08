@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">{{ __('Dashboard') }}</div>
-
+        <user-total :total-user="{{$userCount}}"></user-total>
         <div class="card-body">
           <h1>Admin Dashboard</h1>
         </div>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header" style="padding-top: 2rem">Fill in and become a new member!</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -56,10 +56,10 @@
                         </div>
 
                         <div class="form-group row">
-                        
+
                         <div class="col-md-12">
                         <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Phone Number" required >
-                        
+
                         @error('phone')
                         <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

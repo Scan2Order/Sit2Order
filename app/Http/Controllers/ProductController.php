@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\filter\productFilter;
 use Illuminate\Http\Request;
 use App\product;
 
@@ -35,5 +36,13 @@ class ProductController extends Controller
         ]);
 
         return redirect('/restaurant/menu');
+    }
+
+    public function getThreads(productFilter $filters)
+    {
+        $products = product::latest()->filter($filters);
+
+        $products = $products->get();
+        return $products;
     }
 }

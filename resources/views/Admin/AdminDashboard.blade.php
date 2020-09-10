@@ -1,49 +1,34 @@
 @extends('layouts.app2')
 
 @section('content')
-<div class="othercontainer">
-  <div class="">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="basecard">
-          <div class="card-header">{{ __('Dashboard') }}</div>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">{{ __('Dashboard') }}</div>
+        <div>
           <user-total :total-user="{{$userCount}}"></user-total>
+        </div>
+        <div>
+          <rest-total :total-restaurant="{{$restCount}}"></rest-total>
+        </div>
 
-          <div class="card-body">
-            <h1>Admin Dashboard</h1>
-
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th style="width: 5%;">ID</th>
-        <th >Name</th>
-        <th >Email</th>
-        <th >Gender</th>
-        <th >Phone</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($users as $user)
-      <tr>
-       <th style="width: 5%;">{{$user->id}}</th>
-       <td class="norm-space">{{$user->name}}</td>
-       <td class="norm-space">{{$user->email}}</td>
-       <td class="norm-space">{{$user->gender}}</td>
-       <td class="norm-space">{{$user->phone}}</td>
-     </tr>
-     @endforeach
-
-    </tbody>
-  </table>
-          </div>
+        <div class="card-body">
+          <h1>Admin Dashboard</h1>
         </div>
       </div>
     </div>
   </div>
 </div>
 <br />
-@foreach ($users as $user)
-<user-show id="{{$user->id}}" name="{{$user->name}}" email="{{$user->email}}" gender="{{$user->gender}}" phone="{{$user->phone}}"></user-show>
-@endforeach
+<div>
+  @foreach ($users as $user)
+  <user-show id="{{$user->id}}" name="{{$user->name}}" email="{{$user->email}}" gender="{{$user->gender}}" phone="{{$user->phone}}"></user-show>
+  @endforeach
+</div>
+<div>
+  @foreach ($restaurants as $restaurant)
+  <rest-show id="{{$restaurant->id}}" name="{{$restaurant->name}}" phone="{{$restaurant->phone}}"></rest-show>
+  @endforeach
+</div>
 @endsection

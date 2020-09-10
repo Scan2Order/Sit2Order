@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\filter;
+use App\Filters\productFilter;
 use Illuminate\Http\Request;
 use App\product;
 
@@ -12,9 +14,9 @@ class ProductController extends Controller
         $this->middleware('auth');
     }
 
-    public function getAllProducts()
+    public function getAllProducts(productFilter $filter)
     {
-        $products = product::get();
+        $products = $this->getProducts($filter);
         return view('Restaurant.RestaurantMenuShow', ['products' => $products]);
     }
 
@@ -35,5 +37,13 @@ class ProductController extends Controller
         ]);
 
         return redirect('/restaurant/menu');
+    }
+
+    public function getProducts(productFilter $filters)
+    {
+        $products = product::latest()->filter($filters);
+
+        $products = $products->get();
+        return $products;
     }
 }

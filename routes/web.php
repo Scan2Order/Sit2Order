@@ -36,14 +36,15 @@ Route::get('/user', 'UserProfileController@index')->name('user');
 Route::get('/admin/dashboard', 'UserShowController@getAllUsers')->name('AdminDashboard');
 Route::get('/admin/user', 'UserShowController@getAllUsers');
 Route::get('/admin/dashboard/user', 'UserShowController@showUserCount')->name('AddUser');
+Route::get('/admin/dashboard/restaurant', 'UserShowController@getAllRestaurant')->name('AddRestaurant');
 
 // Route::get('/admin/user', function () {
 //     return view('Admin/admin-assets/AddUser');
 // })->name('AddUser');
 
-Route::get('/admin/restaurant', function () {
-    return view('Admin/admin-assets/AddRestaurant');
-})->name('AddRestaurant');
+// Route::get('/admin/restaurant', function () {
+//     return view('Admin/admin-assets/AddRestaurant');
+// })->name('AddRestaurant');
 
 //Restaurant Routes
 Route::get('/restaurant/dashboard', 'RestaurantController@index')->name('RestaurantDashboard');

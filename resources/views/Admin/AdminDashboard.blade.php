@@ -1,12 +1,14 @@
 @extends('layouts.app2')
 
 @section('content')
-<div class="">
+<div class="othercontainer">
   <div class="">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="basecard">
           <div class="card-header">{{ __('Dashboard') }}</div>
+
+          <user-total :total-user="{{$userCount}}"></user-total>
 
           <div class="card-body">
             <h1>Admin Dashboard</h1>

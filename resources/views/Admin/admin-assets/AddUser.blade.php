@@ -1,9 +1,16 @@
 @extends('layouts.app2')
 
 @section('content')
-<div>
-  <h1>User Add</h1>
-  <table class="table table-bordered table-dark table-striped">
+<div class="othercontainer">
+  <div class="">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="basecard">
+          <div class="card-header">Add User</div>
+
+          <div class="card-body">
+
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th style="width: 5%;">ID</th>
@@ -25,61 +32,16 @@
      @endforeach
 
     </tbody>
-    {{-- <tbody>
-      <tr>
-        <td>Data1111111111111111111111111</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data2222222222222222222222222</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data3333333333333333333333333</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td>
-        <td>Data</td>
-        <td>Data</td>
-      </tr>
-    </tbody> --}}
   </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<br />
 @foreach ($users as $user)
 <user-show id="{{$user->id}}" name="{{$user->name}}" email="{{$user->email}}" gender="{{$user->gender}}" phone="{{$user->phone}}"></user-show>
 @endforeach
 @endsection
+

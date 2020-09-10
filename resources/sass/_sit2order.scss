@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 50rem;
+    min-width: 0rem;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
@@ -12,3 +12,11 @@
     border: none;
 
 }
+
+.othercontainer {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }

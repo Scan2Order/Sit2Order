@@ -1923,18 +1923,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
-  }
+  },
+  props: ["id", "name", "address", "phone"]
 });
 
 /***/ }),
@@ -1990,19 +1983,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
   },
-  props: ["user"]
+  props: ["totalRestaurant"]
 });
 
 /***/ }),
@@ -37720,42 +37705,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("table", { staticClass: "table" }, [
-        _c("thead", [
-          _c("tr", [
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("First")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Last")]),
-            _vm._v(" "),
-            _c("th", { attrs: { scope: "col" } }, [_vm._v("Handle")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("th", { attrs: { scope: "row" } }, [_vm._v("1")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("Mark")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("Otto")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("@mdo")])
-          ])
+  return _c("div", [
+    _c("table", { staticClass: "table table-dark" }, [
+      _c("tbody", [
+        _c("tr", [
+          _c("td", [_vm._v(_vm._s(_vm.id))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.name))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.address))]),
+          _vm._v(" "),
+          _c("td", [_vm._v(_vm._s(_vm.phone))])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37817,23 +37783,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("table", { staticClass: "table table-dark" }, [
-      _c("tbody", [
-        _c("tr", [
-          _c("td", [_vm._v(_vm._s(_vm.id))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.name))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.email))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.gender))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(_vm.phone))])
+  return _c(
+    "div",
+    {
+      staticClass: "card text-white bg-primary mb-3",
+      staticStyle: { "max-width": "18rem" }
+    },
+    [
+      _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "card-title" }, [
+          _vm._v(_vm._s(_vm.totalRestaurant))
         ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

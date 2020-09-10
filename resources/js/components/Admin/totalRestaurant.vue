@@ -1,16 +1,8 @@
 <template>
-  <div>
-    <table class="table table-dark">
-      <tbody>
-        <tr>
-          <td>{{id}}</td>
-          <td>{{name}}</td>
-          <td>{{email}}</td>
-          <td>{{gender}}</td>
-          <td>{{phone}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{totalRestaurant}}</h5>
+    </div>
   </div>
 </template>
 
@@ -20,6 +12,6 @@ export default {
     console.log("Component mounted.");
   },
 
-  props: ["user"],
+  props: ["totalRestaurant"],
 };
 </script>

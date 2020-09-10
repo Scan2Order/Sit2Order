@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\restaurant;
 use Auth;
 
 class UserShowController extends Controller
@@ -16,8 +17,10 @@ class UserShowController extends Controller
     public function getAllUsers()
     {
         $users = User::get();
+        $restaurants = restaurant::get();
         $userCount = User::count();
-        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount]);
+        $restCount = restaurant::count();
+        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants]);
     }
 
     public function destroy($id)
@@ -30,5 +33,11 @@ class UserShowController extends Controller
     {
         $users = User::get();
         return view('Admin.admin-assets.AddUser', ['users' => $users]);
+    }
+
+    public function getAllRestaurant()
+    {
+        $restaurants = restaurant::get();
+        return view('Admin.admin-assets.AddRestaurant', ['restaurants' => $restaurants]);
     }
 }

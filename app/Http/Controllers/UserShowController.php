@@ -23,11 +23,20 @@ class UserShowController extends Controller
         return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants]);
     }
 
-    public function destroy($id)
+    public function destroyUser($id)
     {
         $users = User::findOrFail($id);
+        $restaurants = restaurant::findOrFail($id);
         $users->delete();
+        $restaurants->delete();
         return redirect('admin/dashboard/user')->with('status', 'Deleted sucessfully');
+    }
+
+    public function destroyRest($id)
+    {
+        $restaurants = restaurant::findOrFail($id);
+        $restaurants->delete();
+        return redirect('admin/dashboard/restaurant')->with('status', 'Deleted sucessfully');
     }
 
     public function showUserCount()

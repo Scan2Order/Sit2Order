@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="basecard">
-                    <div class="card-header">Add Restaurant</div>
+                    <div class="card-header">Restaurant Management</div>
 
                     <div class="card-body">
 
@@ -17,6 +17,8 @@
                                     <th>Name</th>
                                     <th>Adress</th>
                                     <th>Phone</th>
+                                    <th>Action</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -26,6 +28,18 @@
                                     <td class="norm-space">{{$restaurant->name}}</td>
                                     <td class="norm-space">{{$restaurant->address}}</td>
                                     <td class="norm-space">{{$restaurant->phone}}</td>
+                                    <td>
+                                        <a href="{{route ('UserEdit')}}" class="float-left">
+                                            <button type="button" class="btn btn-info btn-sm">Edit</button>
+                                        </a>
+                                        <form action="/admin/dashboard/restaurant/{{$restaurant->id}}" method="POST">
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
+                                            <!-- @csrf
+                      @method('DELETE') -->
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
 

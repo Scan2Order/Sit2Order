@@ -38,9 +38,11 @@ Route::get('/admin/user', 'UserShowController@getAllUsers');
 Route::get('/admin/dashboard/user', 'UserShowController@showUserCount')->name('AddUser');
 Route::get('/admin/dashboard/restaurant', 'UserShowController@getAllRestaurant')->name('AddRestaurant');
 
-// Route::get('/admin/user', function () {
-//     return view('Admin/admin-assets/AddUser');
-// })->name('AddUser');
+Route::delete('/admin/dashboard/user/{id}', 'UserShowController@destroy');
+
+Route::get('/admin/dashboard/user/edit', function () {
+    return view('Admin/admin-assets/UserEdit');
+})->name('UserEdit');
 
 // Route::get('/admin/restaurant', function () {
 //     return view('Admin/admin-assets/AddRestaurant');

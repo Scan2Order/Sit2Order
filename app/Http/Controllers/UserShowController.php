@@ -25,8 +25,9 @@ class UserShowController extends Controller
 
     public function destroy($id)
     {
-        User::destroy($id);
-        return redirect()->route('/Admin/AdminAddUser')->with('success', 'User Has been deleted');
+        $users = User::findOrFail($id);
+        $users->delete();
+        return redirect('admin/dashboard/user')->with('status', 'Deleted sucessfully');
     }
 
     public function showUserCount()

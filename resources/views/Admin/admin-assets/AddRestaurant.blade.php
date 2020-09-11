@@ -35,8 +35,6 @@
                                         <form action="/admin/dashboard/restaurant/{{$restaurant->id}}" method="POST">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
-                                            <!-- @csrf
-                      @method('DELETE') -->
                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                         </form>
                                     </td>

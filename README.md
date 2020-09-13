@@ -1,4 +1,4 @@
-<p align="center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Faidenjeremiah16&psig=AOvVaw3zQzootK4RD3AVJJaqzDsI&ust=1600066779965000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDZmbLH5esCFQAAAAAdAAAAABAD" width="400"></p>
+<p align="center"><img src="https://e7.pngegg.com/pngimages/438/980/png-clipart-the-pirate-bay-logo-the-pirate-bay-torrent-file-kickasstorrents-copyright-infringement-pirates-of-the-caribbean-miscellaneous-logo.png" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>

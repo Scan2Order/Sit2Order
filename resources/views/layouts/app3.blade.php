@@ -25,6 +25,7 @@
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #202020">
       <div class="container">
+        <img src="./images/logo1.png"/>
         <a class="navbar-brand" href="{{ url('/') }}">
           {{ config('app.name', 'Laravel') }}
         </a>

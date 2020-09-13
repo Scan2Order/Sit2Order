@@ -4,7 +4,7 @@
       <h5 class="card-title">{{ name }}</h5>
       <p class="card-text">{{ description }}</p>
       <p class="card-text">RM {{ String(price) }}</p>
-      <p class="card-text">LOL</p>
+      <a href="#" class="stretched-link">Go somewhere</a>
     </div>
   </div>
 </template>
@@ -18,3 +18,14 @@ export default {
   props: ["name", "description", "price", "categories"],
 };
 </script>
+
+<style scoped>
+    .card-body {
+        position: relative;
+
+    }
+
+    .card-title {
+        color: blue;
+    }
+</style>

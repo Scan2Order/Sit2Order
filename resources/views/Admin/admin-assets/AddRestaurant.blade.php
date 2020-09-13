@@ -7,7 +7,13 @@
             <div class="col-md-8">
                 <div class="basecard">
                     <div class="card-header">Restaurant Management</div>
-
+                    @if (\Session::has('status'))
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>{!! \Session::get('status') !!}</li>
+                        </ul>
+                    </div>
+                    @endif
                     <div class="card-body">
 
                         <table class="table table-bordered table-striped">

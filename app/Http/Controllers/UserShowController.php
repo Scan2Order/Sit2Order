@@ -50,4 +50,9 @@ class UserShowController extends Controller
         $restaurants = restaurant::get();
         return view('Admin.admin-assets.AddRestaurant', ['restaurants' => $restaurants]);
     }
+
+    public function editAdminProfile()
+    {
+        //
+    }
 }

@@ -31,12 +31,18 @@ Auth::routes();
 //User Routes
 Route::get('/user', 'UserProfileController@index')->name('user');
 
+//edit route for user
+Route::post('/user/{id}', 'UserProfileController@update');
+Route::get('/user/{id}', 'UserProfileController@create');
+
+
 
 //Admin Routes
 Route::get('/admin/dashboard', 'UserShowController@getAllUsers')->name('AdminDashboard');
 Route::get('/admin/user', 'UserShowController@getAllUsers');
 Route::get('/admin/dashboard/user', 'UserShowController@showUserCount')->name('AddUser');
 Route::get('/admin/dashboard/restaurant', 'UserShowController@getAllRestaurant')->name('AddRestaurant');
+Route::get('/admin/dashboard/profile', 'AdminController@AdminProfileShow')->name('AdminProfile');
 
 //delete route for Admin
 Route::delete('/admin/dashboard/user/{id}', 'UserShowController@destroyUser');
@@ -47,9 +53,8 @@ Route::get('/admin/dashboard/user/edit', function () {
     return view('Admin/admin-assets/UserEdit');
 })->name('UserEdit');
 
-// Route::get('/admin/restaurant', function () {
-//     return view('Admin/admin-assets/AddRestaurant');
-// })->name('AddRestaurant');
+//post route for admin
+Route::post('/admin/dashboard/user/edit', 'UserShowController@editAdminProfile');
 
 //Restaurant Routes
 Route::get('/restaurant/dashboard', 'RestaurantController@index')->name('RestaurantDashboard');
@@ -61,6 +66,13 @@ Route::get('/restaurant/addmenu', function () {
 Route::post('/restaurant/addmenu', 'ProductController@store');
 
 Route::get('/restaurant/menu', 'RestaurantController@getAllProducts')->name('RestaurantDashMenu');
+
+//delete route for restaurant
+Route::delete('/restaurant/menu/{id}', 'ProductController@destroyProd');
+
+//edit route for restaurant
+Route::post('/restaurant/menu/{id}', 'ProductController@update');
+Route::get('/restaurant/menu/{id}', 'ProductController@create');
 
 
 //Auth Route in group

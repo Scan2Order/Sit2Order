@@ -15,4 +15,9 @@ class AdminController extends Controller
     {
         return view('Admin/AdminDashboard');
     }
+
+    public function AdminProfileShow()
+    {
+        return view('Admin/admin-assets/AdminProfile');
+    }
 }

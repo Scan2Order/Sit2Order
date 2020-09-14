@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class UserProfileController extends Controller
 {
@@ -13,6 +15,33 @@ class UserProfileController extends Controller
 
     public function index()
     {
-        return view('User/home');
+        $user = auth()->user();
+        // dd($user);
+        return view('User/home', ['user' => $user]);
+    }
+
+    public function update(Request $request)
+    {
+
+        $user = Auth::User();
+
+        $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required'
+        ]);
+
+        $user = User::findOrFail(auth()->id());
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+
+        $user->save();
+
+        return redirect('/user');
+    }
+
+    public function create()
+    {
+        $user = auth()->user();
+        return view('User/user-assets/profileEdit', ['user' => $user]);
     }
 }

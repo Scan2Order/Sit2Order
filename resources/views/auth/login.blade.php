@@ -56,16 +56,16 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link col-md-8 offset-md-2" href="{{ route('password.request') }}" style="padding-bottom: 2rem;">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                                <a class="btn btn-link col-md-8 offset-md-2" href="{{ route('password.request') }}" style="padding-bottom: 2rem;">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
                                 @endif
                             </div>
                         </div>
                         <div class="card-header" style="padding-top: 2rem; font-size: 20px;">Not a member yet?</br>Register with us now!</div>
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-2">
-                                <button type="submit" onclick="window.location='{{ route('register') }}'" class="btn btn-primary btn-lg btn-block">
+                                <button type="button" onclick="window.location='{{ route('register') }}'" class="btn btn-primary btn-lg btn-block">
                                     <a>Go to Register</a>
                                 </button>
                             </div>

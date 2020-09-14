@@ -31,3 +31,16 @@
 </div>
 @endsection
 
+@foreach ($products as $product)
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ $product->name }}</h5>
+    <p class="card-text">{{ $product->description }}</p>
+    <p class="card-text">RM {{ number_format($product->price, 2) }}</p>
+    <a href="{{ route('Restaurant.addToCart', ['id' => $product->id])}}">
+      <button class="btn btn-primary btn-sm">Add To Cart</button>
+    </a>
+  </div>
+</div>
+@endforeach
+@endsection

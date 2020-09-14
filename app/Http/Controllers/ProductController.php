@@ -6,6 +6,7 @@ use App\Filters\filter;
 use App\Filters\productFilter;
 use Illuminate\Http\Request;
 use App\product;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -45,5 +46,38 @@ class ProductController extends Controller
 
         $products = $products->get();
         return $products;
+    }
+
+    public function destroyProd($id)
+    {
+        $products = product::findOrFail($id);
+        $products->delete();
+        return redirect('restaurant/menu')->with('status', 'Deleted sucessfully');
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'categories' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+
+        $product = product::findOrFail($id);
+        $product->name = $request->name;
+        $product->categories = $request->categories;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        $product->save();
+
+        return redirect('/restaurant/menu');
+    }
+
+    public function create($id)
+    {
+        return view('Restaurant/restaurant-assets/EditMenu', ['id' => $id]);
     }
 }

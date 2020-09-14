@@ -24,23 +24,30 @@
         </ul>
         <div style="margin: 10px">
             @foreach ($products as $product)
-            <rest-menu categories=" {{$product->categories}}" name="{{$product->name}}" description="{{$product->description}}" price="{{number_format($product->price,2)}}"></rest-menu>
+            <div class="card" style="width: flex; margin-bottom: 10px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $product->name }}</h5>
+                    <p class="card-text">{{ $product->description }}</p>
+                    <p class="card-text">RM {{ number_format($product->price, 2) }}</p>
+                    <a href="{{ route('Restaurant.addToCart', ['id' => $product->id])}}" class="stretched-link">
+                    </a>
+                </div>
+            </div>
             @endforeach
+
         </div>
     </div>
 </div>
-@endsection
 
-@foreach ($products as $product)
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{ $product->name }}</h5>
-    <p class="card-text">{{ $product->description }}</p>
-    <p class="card-text">RM {{ number_format($product->price, 2) }}</p>
-    <a href="{{ route('Restaurant.addToCart', ['id' => $product->id])}}">
-      <button class="btn btn-primary btn-sm">Add To Cart</button>
-    </a>
-  </div>
-</div>
-@endforeach
+<style>
+    .card {
+        margin-bottom: 0.25rem;
+        display: flex;
+        background: rgba(255, 255, 255, 0.37);
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.034), 0 15px 12px rgba(0, 0, 0, 0.034);
+    }
+
+</style>
+
+
 @endsection

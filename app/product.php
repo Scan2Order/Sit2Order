@@ -15,4 +15,9 @@ class product extends Model
     {
         return $this->belongsToMany('App/orderdetails', 'product_orderdetails');
     }
+
+    public function scopeFilter($query, $filters)
+    {
+        return $filters->apply($query);
+    }
 }

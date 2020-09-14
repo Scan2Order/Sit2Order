@@ -5,7 +5,7 @@ new<<template>
 
 <script>
 export default {
-
+f
 }
 </script>
 

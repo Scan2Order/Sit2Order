@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\product;
-
+use App\Filters\ProductFilters;
 class ProductController extends Controller
 {
     public function __construct()
@@ -12,12 +12,36 @@ class ProductController extends Controller
         $this->middleware('auth');
     }
 
-    public function getAllProducts()
+    
+
+    // public function getAllProducts()
+    // {
+    //     $products = product::get();
+       
+        
+    //     return view('Restaurant.RestaurantMenuShow', ['products' => $products]);
+     
+    // }
+
+    function index( ProductFilters $filters)
     {
-        $products = product::get();
-        //if you want to get contacts on where condition use below code
-        //$contacts = Contact::Where('tenant_id', "1")->get();
-        // dd($products);
+        $products = $this->getThreads($filters);
+
+        if (request()->wantsJson())
+            return $products;
+
         return view('Restaurant.RestaurantMenuShow', ['products' => $products]);
     }
+
+
+
+    public function getThreads(ProductFilters $filters)
+    {
+        $products = product::latest()->filter($filters);
+
+        $products = $products->get();
+        return $products;
+    }
+ 
 }
+

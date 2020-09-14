@@ -3,6 +3,7 @@
 return [
     /**
      * Control if the seeder should create a user per role while seeding the data.
+
      */
     'create_users' => true,
 
@@ -15,10 +16,6 @@ return [
         'superadministrator' => [
             'users' => 'c,r,u,d',
             'payments' => 'c,r,u,d',
-            'profile' => 'r,u'
-        ],
-        'administrator' => [
-            'users' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
         'restaurant' => [

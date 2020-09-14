@@ -25,12 +25,24 @@ Vue.component(
 );
 Vue.component("rest-menu", require("./components/RestaurantMenu.vue").default);
 Vue.component(
+    "dash-menu",
+    require("./components/Restaurant/DashboardMenu.vue").default
+);
+Vue.component(
     "user-show",
     require("./components/Admin/AdminDashUser.vue").default
 );
 Vue.component(
     "rest-show",
     require("./components/Admin/AdminDashRest.vue").default
+);
+Vue.component(
+    "user-total",
+    require("./components/Admin/totalUser.vue").default
+);
+Vue.component(
+    "rest-total",
+    require("./components/Admin/totalRestaurant.vue").default
 );
 
 Vue.component("Shoppingcart", require("./components/User/shoppingcart.vue").default

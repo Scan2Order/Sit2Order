@@ -11,7 +11,7 @@ class UserShowController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('role:superadministrator');
     }
 
     public function getAllUsers()
@@ -51,8 +51,28 @@ class UserShowController extends Controller
         return view('Admin.admin-assets.AddRestaurant', ['restaurants' => $restaurants]);
     }
 
-    public function editAdminProfile()
+    //Restaurant Update
+    public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'name' => 'required',
+            'address' => 'required',
+            'phone' => 'required'
+        ]);
+
+        $restaurant = restaurant::findOrFail($id);
+        $restaurant->name = $request->name;
+        $restaurant->address = $request->address;
+        $restaurant->phone = $request->phone;
+
+        $restaurant->save();
+
+        return redirect('/admin/dashboard/restaurant');
+    }
+
+    public function create($id)
+    {
+        return view('Admin/admin-assets/RestaurantEdit', ['id' => $id]);
     }
 }

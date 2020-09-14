@@ -35,8 +35,8 @@
                                     <td class="norm-space">{{$restaurant->address}}</td>
                                     <td class="norm-space">{{$restaurant->phone}}</td>
                                     <td>
-                                        <a href="{{route ('UserEdit')}}" class="float-left">
-                                            <button type="button" class="btn btn-info btn-sm">Edit</button>
+                                        <a href="/admin/dashboard/restaurant/{{$restaurant->id}}">
+                                            <button class="btn btn-primary btn-sm">Edit</button>
                                         </a>
                                         <form action="/admin/dashboard/restaurant/{{$restaurant->id}}" method="POST">
                                             {{csrf_field()}}

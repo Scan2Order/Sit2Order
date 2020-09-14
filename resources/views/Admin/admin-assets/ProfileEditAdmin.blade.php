@@ -5,10 +5,10 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">{{ __('Edit Restaurant') }}</div>
+        <div class="card-header">{{ __('Update Profile') }}</div>
 
         <div class="card-body">
-          <form method="POST" action="/admin/dashboard/restaurant/{{$id}}">
+          <form method="POST" action="/admin/dashboard/profile/{$id}">
             {{ csrf_field() }}
             {{method_field('post')}}
 
@@ -16,7 +16,7 @@
               <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
               <div class="col-md-6">
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" required autocomplete="name" autofocus>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
 
                 @error('name')
                 <span class="invalid-feedback" role="alert">
@@ -27,17 +27,9 @@
             </div>
 
             <div class="form-group row">
-              <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-
-              <div class="col-md-6">
-                <textarea id="address" type="text" class="form-control" name="address" required autocomplete="address"></textarea>
-              </div>
-            </div>
-
-            <div class="form-group row">
 
               <div class="col-md-12">
-                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Phone Number" required>
+                <input id="phone" type="text" value="{{ $user->phone }}" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Phone Number" required>
 
                 @error('phone')
                 <span class="invalid-feedback" role="alert">

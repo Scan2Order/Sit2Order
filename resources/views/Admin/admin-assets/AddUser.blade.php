@@ -37,9 +37,6 @@
                   <td class="norm-space">{{$user->gender}}</td>
                   <td class="norm-space">{{$user->phone}}</td>
                   <td>
-                    <a href="{{route ('UserEdit')}}" class="float-left">
-                      <button type="button" class="btn btn-info btn-sm">Edit</button>
-                    </a>
                     <form action="/admin/dashboard/user/{{$user->id}}" method="POST">
                       {{csrf_field()}}
                       {{method_field('DELETE')}}

@@ -19,23 +19,7 @@ window.Vue = require("vue");
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component(
-    "example-component",
-    require("./components/ExampleComponent.vue").default
-);
-Vue.component("rest-menu", require("./components/RestaurantMenu.vue").default);
-Vue.component(
-    "dash-menu",
-    require("./components/Restaurant/DashboardMenu.vue").default
-);
-Vue.component(
-    "user-show",
-    require("./components/Admin/AdminDashUser.vue").default
-);
-Vue.component(
-    "rest-show",
-    require("./components/Admin/AdminDashRest.vue").default
-);
+
 Vue.component(
     "user-total",
     require("./components/Admin/totalUser.vue").default

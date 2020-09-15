@@ -16,8 +16,12 @@ class UserProfileController extends Controller
     public function index()
     {
         $user = auth()->user();
-        // dd($user);
-        return view('User/home', ['user' => $user]);
+        $orders = $user->orders;
+        $ordersTrans = $orders->transform(function ($order, $key) {
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        return view('User/home', ['user' => $user, 'orders' => $orders]);
     }
 
     public function update(Request $request)

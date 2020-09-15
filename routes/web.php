@@ -17,7 +17,7 @@ Route::get('/bosskur', function () {
     return view('welcome');
 });
 
-
+//default route
 Route::get('/', function () {
     return redirect('/register');
 });
@@ -45,10 +45,9 @@ Route::get('/admin/dashboard/restaurant', 'UserShowController@getAllRestaurant')
 
 Route::get('/admin/dashboard/profile', 'AdminController@AdminProfileShow')->name('AdminProfile');
 
-//delete route for Admin
+//delete route for Admin management
 Route::delete('/admin/dashboard/user/{id}', 'UserShowController@destroyUser');
 Route::delete('/admin/dashboard/restaurant/{id}', 'UserShowController@destroyRest');
-
 
 //edit route for admin (Restaurant)
 Route::post('/admin/dashboard/restaurant/{id}', 'UserShowController@update');
@@ -61,15 +60,15 @@ Route::get('/admin/dashboard/profile/{id}', 'AdminController@create');
 
 
 
+
+
+
 //Restaurant Routes
 Route::get('/restaurant/dashboard', 'RestaurantController@index')->name('RestaurantDashboard');
-
 Route::get('/restaurant/addmenu', function () {
     return view('Restaurant/RestaurantMenuAdd');
 })->name('RestaurantMenuAdd');
-
 Route::post('/restaurant/addmenu', 'ProductController@store');
-
 Route::get('/restaurant/menu', 'RestaurantController@getAllProducts')->name('RestaurantDashMenu');
 
 //delete route for restaurant
@@ -88,23 +87,36 @@ Route::get('/menu/add-to-cart/{id}', [
     'uses' => 'CartController@getAddToCart',
     'as' => 'Restaurant.addToCart'
 ]);
-
 Route::get('/menu/shopping-cart', [
     'uses' => 'CartController@getCart',
     'as' => 'Restaurant.shoppingCart'
 ]);
 
+//reduce item button route for shopping cart
 Route::get('/reduce/{id}', [
     'uses' => 'CartController@getReduceByOne',
     'as' => 'Restaurant.reduceByOne'
 ]);
-
 Route::get('/remove/{id}', [
     'uses' => 'CartController@getRemoveItem',
     'as' => 'Restaurant.remove'
 ]);
 
+//checkout route for shopping cart restaurant
+Route::get('/menu/checkout', [
+    'uses' => 'CartController@getCheckout',
+    'as' => 'Restaurant.RestaurantCheckout'
+]);
 
+Route::post('/menu/checkout', [
+    'uses' => 'CartController@PostCheckout',
+    'as' => 'Restaurant.RestaurantCheckout'
+]);
+
+// Route::post('/menu/checkout/{id}', [
+//     'uses' => 'CartController@PostCheckout',
+//     'as' => 'Restaurant.RestaurantCheckout'
+// ]);
 
 
 

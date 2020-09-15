@@ -20,15 +20,14 @@
             <li class="nav-item" style="font-weight: bolder;">
                 <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Minuman">Minuman</a>
             </li>
-
         </ul>
         <div style="margin: 10px">
             @foreach ($products as $product)
-            <div class="card" style="width: flex; margin-bottom: 10px">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $product->name }}</h5>
+            <div class="card" style="width: flex; margin-bottom: 10px; box-shadow: none;">
+                <div class="card-body" style="box-shadow: none;">
+                    <h5 class="card-title" style="font-weight: bolder;">{{ $product->name }}</h5>
                     <p class="card-text">{{ $product->description }}</p>
-                    <p class="card-text">RM {{ number_format($product->price, 2) }}</p>
+                    <p class="card-text" style="font-weight: bold;">RM {{ number_format($product->price, 2) }}</p>
                     <a href="{{ route('Restaurant.addToCart', ['id' => $product->id])}}" class="stretched-link">
                     </a>
                 </div>

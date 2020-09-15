@@ -42,12 +42,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li>
-                            <a href="{{route('Restaurant.shoppingCart')}}">
-                                <i class="fa fa-shopping-cart" aria-hidden="true">
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="{{route('Restaurant.shoppingCart')}}" style="text-decoration: none; color: rgb(145, 145, 145); background-color: none;">
                                     Shopping Cart
-                                    <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
-                                </i>
+                                    <span class="badge" style="background-color: rebeccapurple; color: white;">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                             </a>
                         </li>
                         <!-- Authentication Links -->

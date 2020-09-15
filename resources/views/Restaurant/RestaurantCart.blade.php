@@ -1,41 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-@if(Session::has('cart'))
-<div class="row">
-  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-    <ul class="list-group">
-      @foreach($products as $product)
-      <li class="list-group-item">
-        <span class="badge">{{$product['qty']}}</span>
-        <strong>{{$product['item']['title']}}</strong>
-        <span class="label label-success">{{$product['price']}}</span>
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary btn xs dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="{{route('Restaurant.reduceByOne', ['id' => $product['item']['id']])}}">Reduce by 1</a></li>
-            <li><a href="{{route('Restaurant.remove', ['id' => $product['item']['id']])}}">Reduce All</a></li>
-          </ul>
+
+<div class="container">
+    <div class="card">
+        @if(Session::has('cart'))
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+            @foreach($products as $product)
+                <li class="list-group-item" style="background-color: rgba(255, 255, 255, 0);">
+                <span class="badge">{{$product['qty']}}</span>
+                <strong>{{$product['item']['name']}}</strong>
+                <span class="label label-success">{{$product['price']}}</span>
+                <div class="dropdown">
+                <button type="button" class="btn btn-secondary btn-sm btn xs dropdown-toggle" data-toggle="dropdown">Edit <span class="caret"></span></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{{route('Restaurant.reduceByOne', ['id' => $product['item']['id']])}}">Reduce by 1</a>
+                        <a class="dropdown-item" href="{{route('Restaurant.remove', ['id' => $product['item']['id']])}}">Remove Order</a>
+                    </div>
+                </div>
+            @endforeach
+            </ul>
+
+            <div class="card-body">
+                <strong>Total : RM {{$totalPrice}}</strong>
+            </div>
+
+            <div class="card-body">
+            <button type="button" class="btn btn-success btn-lg btn-block" style="margin-top: 2rem">Checkout</button>
+            </div>
         </div>
-      </li>
-      @endforeach
-    </ul>
+        @else
+        <div class="card-body">
+            <h2>No item in cart</h2>
+          </div>
+          @endif
+    </div>
+</div>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-    <strong>Total : {{$totalPrice}}</strong>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-      <button type="button" class="btn btn-success">Checkout</button>
-    </div>
-  </div>
-  @else
-  <div class="row">
-    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-      <h2>No item in cart</h2>
-    </div>
-    @endif
     @endsection

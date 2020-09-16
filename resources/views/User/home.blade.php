@@ -39,6 +39,7 @@
                             <strong>Total Price : {{$order->cart->totalPrice}}</strong>
                         </div>
                     </div>
+                    <hr>
                     @endforeach
                 </div>
             </div>

@@ -26,6 +26,9 @@ Route::get('Shopping cart', function (){
     return view('/Restaurant.ShoppingCart');
 });
 
+Route:: get('Rating', function(){
+return view('/User.UserRating');
+});
 
 
 Auth::routes();
@@ -115,4 +118,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/menu', 'ProductController@getAllProducts');
     Route::get('/restaurant', 'RestaurantController@index')->name('home');
     Route::get('/superadministrator', 'UserShowController@getAllUsers')->name('superadministrator');
+    
 });

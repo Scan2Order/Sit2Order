@@ -41,6 +41,11 @@ class User extends Authenticatable
 
     public function rating()
     {
-        return $this->belongsToMany('App/rating', 'user_rating');
+        return $this->belongsToMany('App\rating', 'user_rating');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\order');
     }
 }

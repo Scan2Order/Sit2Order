@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cart;
+use App\order;
 use App\product;
 use Session;
+use Auth;
 
 class CartController extends Controller
 {
@@ -31,8 +33,13 @@ class CartController extends Controller
         $cart = new Cart($oldCart);
         $cart->reduceByOne($id);
 
-        Session::put('cart', $cart);
+        if (count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
         return redirect('/menu/shopping-cart');
+
     }
 
     public function getRemoveItem($id)
@@ -57,5 +64,35 @@ class CartController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         return view('Restaurant.RestaurantCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
+
+    public function getCheckout()
+    {
+        if (!Session::has('cart')) {
+            return view('Restaurant.RestaurantCart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+        return view('Restaurant.RestaurantCheckout', ['total' => $total]);
+    }
+
+    public function postCheckout(Request $request)
+    {
+        if (!Session::has('cart')) {
+            return view('Restaurant.RestaurantCart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        $order = new order();
+        $order->cart = serialize($cart);
+        $order->address = $request->input('address');
+        $order->name = $request->input('name');
+
+        Auth::user()->orders()->save($order);
+
+        Session::forget('cart');
+        return redirect('/menu')->with('success', 'Successfully purchased products!');
     }
 }

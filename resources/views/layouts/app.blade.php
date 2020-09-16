@@ -26,8 +26,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #202020">
             <div class="container">
-                <a class="navbar-brand">
-                    {{ config('app.name', 'Sit2Order') }}
+                <img src="./images/logo1.png" />
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,14 +42,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li>
-                            <a href="{{route('Restaurant.shoppingCart')}}">
-                                <i class="fa fa-shopping-cart" aria-hidden="true">
-                                    Shopping Cart
-                                    <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
-                                </i>
-                            </a>
-                        </li>
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
@@ -60,6 +53,13 @@
                         </li>
                         @endif
                         @else
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="{{route('Restaurant.shoppingCart')}}" style="text-decoration: none; color: rgb(145, 145, 145); background-color: none;">
+                                Shopping Cart
+                                <span class="badge" style="background-color: rebeccapurple; color: white;">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>

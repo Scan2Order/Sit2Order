@@ -10947,12 +10947,12 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   font-family: "Nunito", sans-serif;
-  background: -webkit-linear-gradient(left, #6dc2a6, #BEDEF7);
+  background: -webkit-linear-gradient(left, #292929, #834ca3);
   border-color: transparent;
 }
 
 .btn-primary:hover {
-  background: -webkit-linear-gradient(left, #BEDEF7, #6dc2a6);
+  background: -webkit-linear-gradient(left, #834ca3, #292929);
   border-color: transparent;
 }
 
@@ -11027,6 +11027,12 @@ tr {
 td {
   border-bottom: none;
   border-left: none;
+}
+
+.container img {
+  float: left;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .basecard {

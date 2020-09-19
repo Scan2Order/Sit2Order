@@ -25,7 +25,7 @@
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #202020">
       <div class="container">
-        <img src="./images/logo1.png"/>
+        <img src="./images/logo1.png" />
         <a class="navbar-brand" href="{{ url('/') }}">
           {{ config('app.name', 'Laravel') }}
         </a>
@@ -43,7 +43,7 @@
           <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('RestaurantDashboard') }}">{{ __('Dashboard') }}</a>
+              <a class="nav-link" href="{{ url('/restaurant') }}">{{ __('Dashboard') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('RestaurantDashMenu') }}">{{ __('Menu') }}</a>

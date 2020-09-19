@@ -21,28 +21,19 @@
                                 <tr>
                                     <th style="width: 5%;">ID</th>
                                     <th>Name</th>
-                                    <th>Adress</th>
-                                    <th>Phone</th>
                                     <th>Action</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($restaurants as $restaurant)
+                                @foreach ($roles as $role)
                                 <tr>
-                                    <th style="width: 5%;">{{$restaurant->id}}</th>
-                                    <td class="norm-space">{{$restaurant->name}}</td>
-                                    <td class="norm-space">{{$restaurant->address}}</td>
-                                    <td class="norm-space">{{$restaurant->phone}}</td>
+                                    <th style="width: 5%;">{{$role->id}}</th>
+                                    <td class="norm-space">{{$role->name}}</td>
                                     <td>
-                                        <a href="/admin/dashboard/restaurant/{{$restaurant->id}}">
-                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                        <a href="/admin/dashboard/restaurant/view/{{$role->id}}">
+                                            <button class="btn btn-primary btn-sm">View</button>
                                         </a>
-                                        <form action="/admin/dashboard/restaurant/{{$restaurant->id}}" method="POST">
-                                            {{csrf_field()}}
-                                            {{method_field('DELETE')}}
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

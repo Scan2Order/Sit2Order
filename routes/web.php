@@ -50,8 +50,12 @@ Route::delete('/admin/dashboard/user/{id}', 'UserShowController@destroyUser');
 Route::delete('/admin/dashboard/restaurant/{id}', 'UserShowController@destroyRest');
 
 //edit route for admin (Restaurant)
-Route::post('/admin/dashboard/restaurant/{id}', 'UserShowController@update');
-Route::get('/admin/dashboard/restaurant/{id}', 'UserShowController@create');
+// Route::post('/admin/dashboard/restaurant/{id}', 'UserShowController@update');
+// Route::get('/admin/dashboard/restaurant/{id}', 'UserShowController@create');
+
+//view route for admin (Restaurant)
+Route::get('/admin/dashboard/restaurant/view/{id}', 'UserShowController@viewRest');
+Route::get('/admin/dashboard/user/view/{id}', 'UserShowController@viewUser');
 
 //edit route for admin profile
 Route::post('/admin/dashboard/profile/{id}', 'AdminController@update');
@@ -64,7 +68,7 @@ Route::get('/admin/dashboard/profile/{id}', 'AdminController@create');
 
 
 //Restaurant Routes
-Route::get('/restaurant/dashboard', 'RestaurantController@index')->name('RestaurantDashboard');
+Route::get('/restaurant', 'RestaurantController@index')->name('RestaurantDashboard');
 Route::get('/restaurant/addmenu', function () {
     return view('Restaurant/RestaurantMenuAdd');
 })->name('RestaurantMenuAdd');
@@ -82,7 +86,7 @@ Route::get('/restaurant/menu/{id}', 'ProductController@create');
 Route::post('/restaurant/{id}', 'RestaurantController@update');
 Route::get('/restaurant/{id}', 'RestaurantController@create');
 
-//shopping cart route for restaurant 
+//shopping cart route for restaurant
 Route::get('/menu/add-to-cart/{id}', [
     'uses' => 'CartController@getAddToCart',
     'as' => 'Restaurant.addToCart'

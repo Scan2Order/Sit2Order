@@ -17,10 +17,11 @@ class UserShowController extends Controller
     public function getAllUsers()
     {
         $users = User::get();
+        $roles =  User::whereRoleIs('restaurant')->get();
         $restaurants = restaurant::get();
         $userCount = User::count();
         $restCount = restaurant::count();
-        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants]);
+        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants, 'roles' => $roles]);
     }
 
     public function destroyUser($id)
@@ -47,32 +48,45 @@ class UserShowController extends Controller
 
     public function getAllRestaurant()
     {
-        $restaurants = restaurant::get();
-        return view('Admin.admin-assets.AddRestaurant', ['restaurants' => $restaurants]);
+        // $restaurants = restaurant::get();
+        $roles =  User::whereRoleIs('restaurant')->get();
+        return view('Admin.admin-assets.AddRestaurant', ['roles' => $roles]);
     }
 
     //Restaurant Update
-    public function update(Request $request, $id)
+    // public function update(Request $request, $id)
+    // {
+
+    //     $this->validate($request, [
+    //         'name' => 'required',
+    //         'address' => 'required',
+    //         'phone' => 'required'
+    //     ]);
+
+    //     $restaurant = restaurant::findOrFail($id);
+    //     $restaurant->name = $request->name;
+    //     $restaurant->address = $request->address;
+    //     $restaurant->phone = $request->phone;
+
+    //     $restaurant->save();
+
+    //     return redirect('/admin/dashboard/restaurant');
+    // }
+
+    // public function create($id)
+    // {
+    //     return view('Admin/admin-assets/RestaurantEdit', ['id' => $id]);
+    // }
+
+    public function viewRest($id)
     {
-
-        $this->validate($request, [
-            'name' => 'required',
-            'address' => 'required',
-            'phone' => 'required'
-        ]);
-
-        $restaurant = restaurant::findOrFail($id);
-        $restaurant->name = $request->name;
-        $restaurant->address = $request->address;
-        $restaurant->phone = $request->phone;
-
-        $restaurant->save();
-
-        return redirect('/admin/dashboard/restaurant');
+        $user = User::findOrFail($id);
+        return view('Admin/admin-assets/viewR', ['user' => $user]);
     }
 
-    public function create($id)
+    public function viewUser($id)
     {
-        return view('Admin/admin-assets/RestaurantEdit', ['id' => $id]);
+        $user = User::findOrFail($id);
+        return view('Admin/admin-assets/viewU', ['user' => $user]);
     }
 }

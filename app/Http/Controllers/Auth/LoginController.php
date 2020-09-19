@@ -32,7 +32,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('superadministrator')) {
-            return redirect('/superadministrator');
+            return redirect('/admin/dashboard');
         }
 
         if ($user->hasRole('restaurant')) {

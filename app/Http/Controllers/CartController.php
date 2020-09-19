@@ -39,7 +39,6 @@ class CartController extends Controller
             Session::forget('cart');
         }
         return redirect('/menu/shopping-cart');
-
     }
 
     public function getRemoveItem($id)
@@ -86,7 +85,7 @@ class CartController extends Controller
         $cart = new Cart($oldCart);
 
         $order = new order();
-        $order->cart = serialize($cart);
+        $order->cart = json_encode($cart);
         $order->address = $request->input('address');
         $order->name = $request->input('name');
 

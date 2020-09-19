@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #202020">
             <div class="container">
                 <img src="./images/logo1.png" />
-            <a class="navbar-brand" href="{{ url('/menu')}}">
+                <a class="navbar-brand">
                     {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -53,13 +53,6 @@
                         </li>
                         @endif
                         @else
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="{{route('Restaurant.shoppingCart')}}" style="text-decoration: none; color: rgb(145, 145, 145); background-color: none;">
-                                Shopping Cart
-                                <span class="badge" style="background-color: rebeccapurple; color: white;">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/user') }}">{{  Auth::user()->name  }}</a>
                         </li>

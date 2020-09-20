@@ -37,7 +37,7 @@
                   <td class="norm-space">{{$user->gender}}</td>
                   <td class="norm-space">{{$user->phone}}</td>
                   <td>
-                        <a href="/admin/dashboard/restaurant/view/{{$user->id}}">
+                  <a href="/admin/dashboard/user/view/{{$user->id}}">
                             <button class="btn btn-primary btn-sm">View</button>
                         </a>
                     <form action="/admin/dashboard/user/{{$user->id}}" method="POST">

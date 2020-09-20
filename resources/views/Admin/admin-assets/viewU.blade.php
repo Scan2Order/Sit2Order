@@ -13,7 +13,7 @@
           <h1>{{$user->gender}}</h1>
           <h1>{{$user->phone}}</h1>
         </div>
-        <a href="{{url('/admin/dashboard/restaurant')}}">
+        <a href="{{url('/admin/dashboard/user')}}">
           <button class="btn btn-primary btn-sm">Back</button>
         </a>
       </div>

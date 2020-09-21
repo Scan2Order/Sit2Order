@@ -80,8 +80,8 @@
                             <ul class="list-group">
                                 @foreach($order->cart->items as $item)
                                 <li class="list-group-item">
-                                    <span class="badge">RM {{$item['price']}} RM</span>
-                                    {{ $item['item']['name']}} | {{ $item['qty']}} Units
+                                    <span class="badge">RM {{$item->price}} RM</span>
+                                    {{ $item->item->name}} | {{ $item->qty}} Units
                                 </li>
 
                                 <div class="rate">
@@ -112,6 +112,7 @@
                             <strong>Total Price : {{$order->cart->totalPrice}}</strong>
                         </div>
                     </div>
+                    <hr>
                     @endforeach
                 </div>
             </div>

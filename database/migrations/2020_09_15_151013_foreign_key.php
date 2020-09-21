@@ -16,6 +16,12 @@ class ForeignKey extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('restaurant_id')->nullable();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
+        });
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('restaurant_id')->nullable();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
         });
     }
 

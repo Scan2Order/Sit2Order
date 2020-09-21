@@ -25,9 +25,6 @@
                                 <tr>
                                     <th style="width: 5%;">ID</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Gender</th>
-                                    <th>Phone</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,9 +32,6 @@
                                 <tr>
                                     <th style="width: 5%;">{{$user->id}}</th>
                                     <td class="norm-space">{{$user->name}}</td>
-                                    <td class="norm-space">{{$user->email}}</td>
-                                    <td class="norm-space">{{$user->gender}}</td>
-                                    <td class="norm-space">{{$user->phone}}</td>
                                 </tr>
                                 @endforeach
 
@@ -48,17 +42,13 @@
                                 <tr>
                                     <th style="width: 5%;">ID</th>
                                     <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($restaurants as $restaurant)
+                                @foreach ($roles as $role)
                                 <tr>
-                                    <th style="width: 5%;">{{$restaurant->id}}</th>
-                                    <td class="norm-space">{{$restaurant->name}}</td>
-                                    <td class="norm-space">{{$restaurant->address}}</td>
-                                    <td class="norm-space">{{$restaurant->phone}}</td>
+                                    <th style="width: 5%;">{{$role->id}}</th>
+                                    <td class="norm-space">{{$role->name}}</td>
                                 </tr>
                                 @endforeach
 

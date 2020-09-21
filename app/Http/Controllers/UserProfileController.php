@@ -18,7 +18,8 @@ class UserProfileController extends Controller
         $user = auth()->user();
         $orders = $user->orders;
         $ordersTrans = $orders->transform(function ($order, $key) {
-            $order->cart = unserialize($order->cart);
+            $order->cart = json_decode($order->cart);
+            // dd($order);
             return $order;
         });
         return view('User/home', ['user' => $user, 'orders' => $orders]);

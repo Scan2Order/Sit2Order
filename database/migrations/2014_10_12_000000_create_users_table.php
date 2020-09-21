@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('phone')->nullable();
-            $table->enum('gender', ['male', 'female', 'others']);
+            $table->enum('gender', ['male', 'female', 'others'])->nullable();
         });
     }
 

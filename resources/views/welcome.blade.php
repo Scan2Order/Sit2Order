@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <!-- Styles -->
     <style>
         html,
@@ -75,8 +75,10 @@
             @if (Route::has('login'))
             <div class="top-right links">
                 @auth
+
                 <a href="{{ url('/menu') }}">Home</a>
                 @else
+
                 <a href="{{ route('login') }}">Login</a>
 
                 @if (Route::has('register'))

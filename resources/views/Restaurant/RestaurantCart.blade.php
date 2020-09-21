@@ -37,9 +37,10 @@
         </div>
         @endif
     </div>
+    <a href="{{url('/menu')}}" type="button" class="btn btn-success btn-lg btn-block" style="margin-top: 2rem">Back to menu</a>
 </div>
 @endsection
-  <div class="card">
+  {{-- <div class="card">
     @if(Session::has('cart'))
     <div class="card-body">
       <ul class="list-group list-group-flush">
@@ -76,4 +77,4 @@
     <a href="{{url('/menu')}}" type="button" class="btn btn-success btn-lg btn-block" style="margin-top: 2rem">Back to menu</a>
   </div>
 </div>
-@endsection
+@endsection --}}

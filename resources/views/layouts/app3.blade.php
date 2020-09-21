@@ -43,6 +43,9 @@
           <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
             <li class="nav-item">
+                <a class="nav-link" href="{{ url('/restaurant/orders') }}">{{ __('Orders') }}</a>
+              </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ url('/restaurant') }}">{{ __('Dashboard') }}</a>
             </li>
             <li class="nav-item">

@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         //$user = factory(\App\User::class, 5)->create();
         $products = factory(\App\product::class, 10)->create();
-        $restaurants = factory(\App\restaurant::class, 5)->create();
+        $restaurants = factory(\App\restaurant::class, 1)->create();
         $this->call(LaratrustSeeder::class);
     }
 }

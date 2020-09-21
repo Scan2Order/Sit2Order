@@ -74,6 +74,7 @@ Route::get('/restaurant/addmenu', function () {
 })->name('RestaurantMenuAdd');
 Route::post('/restaurant/addmenu', 'ProductController@store');
 Route::get('/restaurant/menu', 'RestaurantController@getAllProducts')->name('RestaurantDashMenu');
+Route::get('/restaurant/orders', 'RestaurantController@getOrder')->name('RestaurantOrder');
 
 //delete route for restaurant
 Route::delete('/restaurant/menu/{id}', 'ProductController@destroyProd');

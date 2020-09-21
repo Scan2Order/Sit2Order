@@ -88,6 +88,7 @@ class CartController extends Controller
         $order->cart = json_encode($cart);
         $order->address = $request->input('address');
         $order->name = $request->input('name');
+        $order->restaurant_id = 1;
 
         Auth::user()->orders()->save($order);
 

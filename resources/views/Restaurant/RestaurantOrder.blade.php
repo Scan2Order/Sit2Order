@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">{{ $user->name }} orders</div>
+<div class="card-header">{{$user->name}} orders</div>
 
     <div class="card-body">
         @foreach($orders as $order)

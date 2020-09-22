@@ -54,10 +54,10 @@ class RestaurantController extends Controller
         return view('Restaurant/restaurant-assets/profileEdit', ['user' => $user]);
     }
 
-    public function getOrder()
+    public function getOrder(order $id)
     {
         $user = auth()->user();
-        $orders = order::where('restaurant_id', $user->restaurant_id)->get();
+        $orders = order::get();
         $ordersTrans = $orders->transform(function ($order, $key) {
             $order->cart = json_decode($order->cart);
 

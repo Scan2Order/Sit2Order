@@ -28,15 +28,21 @@
                         <div class="panel-body">
                             <ul class="list-group">
                                 @foreach($order->cart->items as $item)
-                                <li class="list-group-item">
-                                    <span class="badge">RM {{$item->price}} RM</span>
-                                    {{ $item->item->name}} | {{ $item->qty}} Units
+                                <li class="list-group-item" style="background-color: rgba(255, 255, 255, 0);">
+                                    <span class="badge">x{{ $item->qty}}</span>
+                                    <strong>{{ $item->item->name}}</strong>
+                                    <span class="badge">RM {{$item->price}}</span>
                                 </li>
                                 @endforeach
                             </ul>
                         </div>
                         <div class="panel-footer">
-                            <strong>Total Price : {{$order->cart->totalPrice}}</strong>
+                            <ul class="list-group">
+                                <li class="list-group item">
+                                </br>
+                                    <strong>Total Price : RM {{$order->cart->totalPrice}}</strong>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <form method="POST" action="/user/{id}">

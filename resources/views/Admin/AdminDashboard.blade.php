@@ -37,6 +37,8 @@
 
                             </tbody>
                         </table>
+                    </br>
+                        <h1>Restaurant List</h1>
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>

@@ -29,6 +29,7 @@
 
             <div class="card-body">
                 <a href="{{route('Restaurant.RestaurantCheckout')}}" type="button" class="btn btn-success btn-lg btn-block" style="margin-top: 2rem">Checkout</a>
+                <a href="{{url('/menu')}}" type="button" class="btn btn-secondary btn-lg btn-block" style="margin-top: 2rem">Back to menu</a>
             </div>
         </div>
         @else
@@ -37,7 +38,7 @@
         </div>
         @endif
     </div>
-    <a href="{{url('/menu')}}" type="button" class="btn btn-success btn-lg btn-block" style="margin-top: 2rem">Back to menu</a>
+
 </div>
 @endsection
   {{-- <div class="card">

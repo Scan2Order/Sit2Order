@@ -32,7 +32,7 @@
                                     <td class="norm-space">{{$role->name}}</td>
                                     <td>
                                         <a href="/admin/dashboard/restaurant/view/{{$role->id}}">
-                                            <button class="btn btn-primary btn-sm">View</button>
+                                            <button class="btn btn-secondary btn-sm">View</button>
                                         </a>
                                     </td>
                                 </tr>

@@ -1,7 +1,7 @@
 @extends('layouts.app3')
 
 @section('content')
-<div class="othercontainer">
+<div class="container">
     <div class="">
         <div class="row justify-content-center">
             <div class="card">
@@ -36,14 +36,20 @@
                         <td class="norm-space">{{$product->description}}</td>
                         <td class="norm-space">{{number_format($product->price,2)}}</td>
                         <td>
+                            <div class="form-group">
                             <a href="/restaurant/menu/{{$product->id}}">
                             <button class="btn btn-secondary btn-sm">Edit</button>
+
+                            </div>
+                            <div class="form-group">
 
                             <form action="/restaurant/menu/{{$product->id}}" method="POST">
                                 {{csrf_field()}}
                                 {{method_field('DELETE')}}
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             </form>
+                            </div>
+
                         </td>
                     </tr>
                     @endforeach

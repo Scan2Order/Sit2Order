@@ -21,13 +21,14 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #202020">
       <div class="container">
-        <img src="./images/logo1.png" />
+        <img src="https://cdn.discordapp.com/attachments/665569979843870723/758312267279761408/logo1.png" />
         <a class="navbar-brand" href="{{ url('/admin/dashboard') }}">
           {{ config('app.name', 'Laravel') }}
         </a>

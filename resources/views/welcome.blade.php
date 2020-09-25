@@ -1,203 +1,252 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<div class="cont_principal">
+    <div class="cont_error">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <h1>Sit2Order</h1>
+        <p>Foods on your fingertips.</p>
+        </br>
+        <button class="button">Enter</button>
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <!-- Styles -->
-    <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-            font-weight: bold;
-        }
-
-        .links>a {
-            color: lightblue;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 300;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="flex-center position-ref full-height">
-        <div class="content">
-            <div class="title m-b-md">
-                Sit2Order
-            </div>
-            @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-
-                <a href="{{ url('/menu') }}">Home</a>
-                @else
-
-                <a href="{{ route('login') }}">Login</a>
-
-                @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
-                @endif
-                @endauth
-            </div>
-            @endif
-
-        </div>
     </div>
-</body>
-
-</html> --}}
-<div class="container">
-	<span>Sit2Order</span>
-	<span class="drop"></span>
+    <div class="cont_aura_1"></div>
+    <div class="cont_aura_2"></div>
 </div>
 
-<svg>
-	<defs>
-		<filter id="gooey">
-			<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
-			<feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -20" result="gooey" />
-			<feComposite in="SourceGraphic" in2="gooey" operator="atop" />
-		</filter>
-	</defs>
-</svg>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins:900&display=swap');
-
-:root {
-	--blue: #0a2bc5;
-	--yellow: #ffcc2f;
+* {
+  margin:0px auto;
+  padding: 0px;
+text-align:center;
 }
-
 body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: 'Poppins', sans-serif;
-	background: var(--black);
-	color: var(--purple);
+  background-color: #1a1b1d;
+}
+.cont_principal {
+position: absolute;
+  width: 100%;
+  height: 100%;
+overflow: hidden;
+}
+.cont_error {
+position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 50%;
+  margin-top:-150px;
 }
 
-.container {
-	filter: url('#gooey');
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.cont_error > h1  {
+ font-family: 'Lato', sans-serif;
+font-weight: 400;
+  font-size:150px;
+color:rgb(255, 255, 255);
+position: relative;
+left:-100%;
+transition: all 0.5s;
 }
 
-.liquid-1 {
-	position: relative;
+
+.cont_error > p  {
+ font-family: 'Lato', sans-serif;
+font-weight: 300;
+  font-size:24px;
+  letter-spacing: 5px;
+color:#9294AE;
+position: relative;
+left:100%;
+transition: all 0.5s;
+    transition-delay: 0.5s;
+-webkit-transition: all 0.5s;
+ -webkit-transition-delay: 0.5s;
 }
 
-span {
-	letter-spacing: 10px;
-	font-size: 8rem;
+.cont_aura_1 {
+  position:absolute;
+  width:300px;
+  height: 120%;
+top:25px;
+right: -340px;
+  background-color: #8A65DF;
+box-shadow: 0px 0px  60px  20px  rgba(137,100,222,0.5);
+-webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.drop {
-	position: absolute;
-	background: var(--purple);
-	width: 22px;
-	height: 22px;
-	border-radius: 60% 70% 50% 60% / 65% 66% 60% 65%;
-	animation: 6s move ease infinite;
+.cont_aura_2 {
+  position:absolute;
+  width:100%;
+  height: 300px;
+right:-10%;
+bottom:-301px;
+ background-color: #8B65E4;
+box-shadow: 0px 0px 60px 10px rgba(131, 95, 214, 0.5),0px 0px  20px  0px  rgba(0,0,0,0.1);
+  z-index:5;
+transition: all 0.5s;
+-webkit-transition: all 0.5s;
 }
 
-.drop:after {
-	width: 17px;
-	height: 17px;
-	content: '';
-	position: absolute;
-	background: var(--purple);
-	border-radius: 50% 60% 60% 70% / 60% 65% 65% 65%;
-	left: 25px;
-	top: 3px;
-	animation: 6s drop_effect ease infinite;
+.cont_error_active > .cont_error > h1 {
+  left:0%;
+}
+.cont_error_active > .cont_error > p {
+  left:0%;
 }
 
-svg {
-	position: absolute;
+.cont_error_active > .cont_aura_2 {
+    animation-name: animation_error_2;
+    animation-duration: 4s;
+  animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+transform: rotate(-20deg);
+}
+.cont_error_active > .cont_aura_1 {
+ transform: rotate(20deg);
+  right:-170px;
+    animation-name: animation_error_1;
+    animation-duration: 4s;
+  animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-@keyframes move {
-	0%, 100% {
-		transform: translate(370px);
-	}
-	
-	50% {
-		transform: translate(-370px);
-	}
+@-webkit-keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
+}
+@-o-keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
+
+}
+@-moz-keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
+
+}
+@keyframes animation_error_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+  }
+  to {  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  }
 }
 
-@keyframes drop_effect {
-	0% {
-		left: 0px;
-	}
-	5% {
-		left: 35px;
-	}
-	45% {
-		left: 0px;
-	}
-	50% {
-		left: 0px;
-	}
-	55% {
-		left: -30px;
-	}
-	95% {
-		left: 0px;
-	}
-	100% {
-		left: 0;
-	}
+
+
+
+@-webkit-keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
 }
+@-o-keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
+}
+}
+@-moz-keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
+}
+@keyframes animation_error_2 {
+  from { -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  }
+  to { -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #1f1f1f , #1c1227);
+  font-family: 'Oswald', sans-serif;
+}
+
+.button {
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 4px;
+  position: relative;
+  background-color: #562e81;
+  border: none;
+  color: #fff;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #351c50;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background: #fff;
+  box-shadow: 0px 2px 10px 5px #3e2646;
+  color: #000;
+}
+
+.button:after {
+  content: "";
+  background: #713779;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.button:focus { outline:0; }
+
 </style>
+
+<script>
+    window.onload = function(){
+document.querySelector('.cont_principal').className= "cont_principal cont_error_active";
+
+}
+</script>

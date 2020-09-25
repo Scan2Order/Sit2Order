@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/bosskur', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
 

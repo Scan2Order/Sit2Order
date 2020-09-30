@@ -56,13 +56,6 @@
                         @endif
                         @else
                         <li class="nav-item">
-
-                            <a class="nav-link" href="{{route('Restaurant.shoppingCart')}}" style="text-decoration: none; color: rgb(145, 145, 145); background-color: none;">
-                                Shopping Cart
-                                <span class="badge" style="background-color: rebeccapurple; color: white;">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/user') }}">{{  Auth::user()->name  }}</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -72,7 +65,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 

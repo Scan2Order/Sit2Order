@@ -42,8 +42,17 @@
                 </div>
             </div>
             @endforeach
-
         </div>
+        <button class="btn btn-secondary btm-sm" style="position: fixed; bottom: 20px; right: 20px; background-color: rebeccapurple; z-index: 1; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.678);">
+        <a href="{{route('Restaurant.shoppingCart')}}" style="text-decoration: none; color: white; font-family: 'Roboto', sans-serif;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;">
+            <i class="fa fa-shopping-cart"></i> View Cart
+        <span class="badge" style="background-color: rgb(43, 21, 65); color: white; letter-spacing: 0px;">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+        </a>
+        </button>
     </div>
 </div>
 

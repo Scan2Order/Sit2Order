@@ -14,7 +14,7 @@
                     <h1>{{$user->phone}}</h1>
                 </div>
                 <a href="user/{{$user->id}}">
-                    <button class="btn btn-primary btn-sm">Update Profile</button>
+                    <button class="btn btn-secondary btn-sm">Update Profile</button>
                 </a>
 
             </div>

@@ -22,7 +22,8 @@ Route::get('/', function () {
     return redirect('/register');
 });
 
-Route::post('/user/{id}', 'UserProfileController@rate');
+Route::post('/user/rate/{id}', 'UserProfileController@rate');
+Route::get('/user/rate/{id}', 'UserProfileController@createRate');
 
 Route:: get('Rating', function(){
 return view('/User.UserRating');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
+use App\order;
 
 class UserProfileController extends Controller
 {
@@ -48,5 +49,21 @@ class UserProfileController extends Controller
     {
         $user = auth()->user();
         return view('User/user-assets/profileEdit', ['user' => $user]);
+    }
+
+    public function rate(Request $request, $id)
+    {
+        $order = order::findOrFail($id);
+        $order->rating = $request->rating;
+        $order->save();
+
+        return redirect('/user');
+    }
+
+    public function createRate($id)
+    {
+        $user = auth()->user();
+        $order = order::findOrFail($id);
+        return view('User/user-assets/rate', ['user' => $user, 'order' => $order]);
     }
 }

@@ -74,7 +74,6 @@
         background: rgba(255, 255, 255, 0.37);
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.034), 0 15px 12px rgba(0, 0, 0, 0.034);
     }
-
 </style>
 
 

@@ -4,7 +4,9 @@
         <h1>Sit2Order</h1>
         <p>Foods on your fingertips.</p>
         </br>
-        <button class="button">Enter</button>
+    <form action="{{url('/login')}}">
+        <button class="button">ENTER</button>
+    </form>
 
     </div>
     <div class="cont_aura_1"></div>

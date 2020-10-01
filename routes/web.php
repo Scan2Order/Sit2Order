@@ -22,6 +22,8 @@ Route::get('/', function () {
     return redirect('/register');
 });
 
+Route::post('/user/rate/{id}', 'UserProfileController@rate');
+Route::get('/user/rate/{id}', 'UserProfileController@createRate');
 
 
 

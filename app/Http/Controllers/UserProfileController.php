@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
+use App\order;
 
 class UserProfileController extends Controller
 {
@@ -18,7 +19,8 @@ class UserProfileController extends Controller
         $user = auth()->user();
         $orders = $user->orders;
         $ordersTrans = $orders->transform(function ($order, $key) {
-            $order->cart = unserialize($order->cart);
+            $order->cart = json_decode($order->cart);
+            // dd($order);
             return $order;
         });
         return view('User/home', ['user' => $user, 'orders' => $orders]);
@@ -47,5 +49,15 @@ class UserProfileController extends Controller
     {
         $user = auth()->user();
         return view('User/user-assets/profileEdit', ['user' => $user]);
+    }
+
+    public function rate(Request $request, $id)
+    {
+        $order = order::findOrFail($id);
+        $order->rating = $request->rating;
+
+        $order->save();
+
+        return redirect('/user');
     }
 }

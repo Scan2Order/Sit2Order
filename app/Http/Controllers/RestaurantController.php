@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\product;
 use App\restaurant;
 use App\User;
+use App\order;
 use Auth;
 
 class RestaurantController extends Controller
@@ -51,5 +52,17 @@ class RestaurantController extends Controller
     {
         $user = auth()->user();
         return view('Restaurant/restaurant-assets/profileEdit', ['user' => $user]);
+    }
+
+    public function getOrder(order $id)
+    {
+        $user = auth()->user();
+        $orders = order::get();
+        $ordersTrans = $orders->transform(function ($order, $key) {
+            $order->cart = json_decode($order->cart);
+
+            return $order;
+        });
+        return view('Restaurant.RestaurantOrder', ['user' => $user, 'orders' => $orders]);
     }
 }

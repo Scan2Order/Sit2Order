@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
@@ -88,11 +88,19 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-0" style="border-bottom: 1px solid rgba(0, 0, 0, 0.125);">
                             <div class="col-md-8 offset-md-2">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+                        </div>
+                        <div class="card-header" style="padding-top: 2rem; font-size: 20px;">Already a member?</br>Log in to your account now!</div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-2">
+                            <a href="{{url('/login')}}">
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Log In</button>
+                            </a>
                             </div>
                         </div>
                     </form>

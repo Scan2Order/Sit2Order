@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">{{ __('User Profile') }}</div>
 
                 <div class="card-body">
@@ -17,8 +17,54 @@
                     <button class="btn btn-secondary btn-sm">Update Profile</button>
                 </a>
 
+            </div> --}}
+            <div class="card"
+            style="
+            display: flex;
+            position: relative;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;">
+                <div class="card-body">
+                    <h3 class="name" style="
+                    font-size: 24px;
+                    font-weight: 600;
+                    text-align: center;">{{$user->name}}</h3>
+                    <p class="title" style="
+                    color: #7C8097;
+                    font-size: .75em;
+                    font-weight: 300;
+                    text-align: center;
+                    padding-top: .5em;
+                    padding-bottom: .7em;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;">{{$user->phone}}</p>
+                    <p class="description" style="
+                    color: #080911;
+                    font-size: 14px;
+                    font-weight: 300;
+                    text-align: center;
+                    margin-bottom: 1.3em;">{{$user->gender}} | {{$user->email}}</p>
+                    <a class="btn" href="user/{{$user->id}}" role="button"
+                    style="
+                    color: #fff;
+                    width: 200px;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    font-weight: 300;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 70px;
+                    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.274);
+                    background: rgba(47, 24, 70, 0.897);
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    letter-spacing: 2.5px;
+                    font-weight: 500;">Update Profile</a>
+                </div>
             </div>
-            <hr>
+            <br/>
             <div class="card">
                 <div class="card-header">{{ __('Orders history') }}</div>
 
@@ -43,16 +89,18 @@
                                     <strong>Total Price : RM {{$order->cart->totalPrice}}</strong>
                                 </li>
                                 @if (!($order->rating))
-                                <a href="user/rate/{{$order->id}}">
-                                    <button class="btn btn-primary btn-sm">Rate</button>
+                                <br/>
+                                <a class="btn btn-dark btn-sm btn-lg btn-block" href="user/rate/{{$order->id}}" style="background: rgba(47, 24, 70, 0.897);">
+                                    Rate
                                 </a>
                                 @else
-                                <p>Rated</p>
+                                <br/>
+                                <p style="font-style: italic; opacity: 0.5;">Rated</p>
                                 @endif
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <hr>
+                    <hr>
                     @endforeach
                 </div>
             </div>

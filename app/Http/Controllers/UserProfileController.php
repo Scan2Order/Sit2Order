@@ -55,9 +55,15 @@ class UserProfileController extends Controller
     {
         $order = order::findOrFail($id);
         $order->rating = $request->rating;
-
         $order->save();
 
         return redirect('/user');
+    }
+
+    public function createRate($id)
+    {
+        $user = auth()->user();
+        $order = order::findOrFail($id);
+        return view('User/user-assets/rate', ['user' => $user, 'order' => $order]);
     }
 }

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">{{ __('User Profile') }}</div>
 <img src = "https://icons-for-free.com/iconfiles/png/512/avatar+human+man+profile+icon-1320085876716628234.png"  class="center">
 
@@ -16,11 +16,57 @@
                     <h1>Phone Number:  {{$user->phone}}</h1>
                 </div>
                 <a href="user/{{$user->id}}">
-                    <button class="btn btn-primary btn-sm">Update Profile</button>
+                    <button class="btn btn-secondary btn-sm">Update Profile</button>
                 </a>
 
+            </div> --}}
+            <div class="card"
+            style="
+            display: flex;
+            position: relative;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;">
+                <div class="card-body">
+                    <h3 class="name" style="
+                    font-size: 24px;
+                    font-weight: 600;
+                    text-align: center;">{{$user->name}}</h3>
+                    <p class="title" style="
+                    color: #7C8097;
+                    font-size: .75em;
+                    font-weight: 300;
+                    text-align: center;
+                    padding-top: .5em;
+                    padding-bottom: .7em;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;">{{$user->phone}}</p>
+                    <p class="description" style="
+                    color: #080911;
+                    font-size: 14px;
+                    font-weight: 300;
+                    text-align: center;
+                    margin-bottom: 1.3em;">{{$user->gender}} | {{$user->email}}</p>
+                    <a class="btn" href="user/{{$user->id}}" role="button"
+                    style="
+                    color: #fff;
+                    width: 200px;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    font-weight: 300;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 70px;
+                    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.274);
+                    background: rgba(47, 24, 70, 0.897);
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    letter-spacing: 2.5px;
+                    font-weight: 500;">Update Profile</a>
+                </div>
             </div>
-            <hr>
+            <br/>
             <div class="card">
                 <div class="card-header">{{ __('Orders history') }}</div>
 
@@ -44,44 +90,15 @@
                                 </br>
                                     <strong>Total Price : RM {{$order->cart->totalPrice}}</strong>
                                 </li>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+                                @if (!($order->rating))
+                                <br/>
+                                <a class="btn btn-dark btn-sm btn-lg btn-block" href="user/rate/{{$order->id}}" style="background: rgba(47, 24, 70, 0.897);">
                                     Rate
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">How was your food?</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="stars">
-                                                <form action="">
-                                                    <input class="star star-5" id="star-5" type="radio" name="star"/>
-                                                    <label class="star star-5" for="star-5"></label>
-                                                    <input class="star star-4" id="star-4" type="radio" name="star"/>
-                                                    <label class="star star-4" for="star-4"></label>
-                                                    <input class="star star-3" id="star-3" type="radio" name="star"/>
-                                                    <label class="star star-3" for="star-3"></label>
-                                                    <input class="star star-2" id="star-2" type="radio" name="star"/>
-                                                    <label class="star star-2" for="star-2"></label>
-                                                    <input class="star star-1" id="star-1" type="radio" name="star"/>
-                                                    <label class="star star-1" for="star-1"></label>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-secondary">Rate</button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
+                                </a>
+                                @else
+                                <br/>
+                                <p style="font-style: italic; opacity: 0.5;">Rated</p>
+                                @endif
                             </ul>
                         </div>
                     </div>

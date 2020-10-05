@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->text('address');
             $table->string('name');
             $table->double('rating')->nullable();
+            $table->double('table')->nullable();
         });
     }
 

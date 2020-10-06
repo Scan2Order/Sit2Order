@@ -27,7 +27,7 @@
                 <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Signature">Signature</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
-                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Drinks">Drinks</a>
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Beverages">Beverages</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
                 <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Western">Western</a>

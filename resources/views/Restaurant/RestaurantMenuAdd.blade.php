@@ -35,7 +35,7 @@
                                 <option value="Signature">Signature</option>
                                 <option value="Noodle">Noodle</option>
                                 <option value="Desert">Desert</option>
-                                <option value="Drinks">Drinks</option>
+                                <option value="Beverages">Beverages</option>
                                 </select>
                             </div>
                         </div>

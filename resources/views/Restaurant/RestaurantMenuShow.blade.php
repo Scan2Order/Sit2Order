@@ -18,16 +18,25 @@
                 <a class="nav-link" style="color: rebeccapurple" href="/menu">All</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
-                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Nasi">Nasi</a>
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Rice">Rice</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
-                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Roti">Roti</a>
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Bread">Bread</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
-                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Goreng">Goreng</a>
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Signature">Signature</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
-                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Minuman">Minuman</a>
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Drinks">Drinks</a>
+            </li>
+            <li class="nav-item" style="font-weight: bolder;">
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Western">Western</a>
+            </li>
+            <li class="nav-item" style="font-weight: bolder;">
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Noodle">Noodle</a>
+            </li>
+            <li class="nav-item" style="font-weight: bolder;">
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Desert">Desert</a>
             </li>
         </ul>
         <div class="col-md-12" style="margin: 10px">

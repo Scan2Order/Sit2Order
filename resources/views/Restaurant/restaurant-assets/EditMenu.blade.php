@@ -47,7 +47,7 @@
               <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
               <div class="col-md-6">
-                <input id="description" type="textarea" class="form-control" name="description" required autocomplete="description">
+                <input id="description" type="textarea" class="form-control" name="description">
               </div>
             </div>
 

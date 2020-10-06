@@ -27,9 +27,6 @@
                 <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Signature">Signature</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
-                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Beverages">Beverages</a>
-            </li>
-            <li class="nav-item" style="font-weight: bolder;">
                 <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Western">Western</a>
             </li>
             <li class="nav-item" style="font-weight: bolder;">
@@ -37,6 +34,9 @@
             </li>
             <li class="nav-item" style="font-weight: bolder;">
                 <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Desert">Desert</a>
+            </li>
+            <li class="nav-item" style="font-weight: bolder;">
+                <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Beverages">Beverages</a>
             </li>
         </ul>
         <div class="col-md-12" style="margin: 10px">

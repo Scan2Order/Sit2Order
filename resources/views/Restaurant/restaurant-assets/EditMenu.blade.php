@@ -31,12 +31,15 @@
 
               <div class="col-md-6">
                 <select class="form-control" name="categories" id="categories" required>
-                  <option value="">Select Categories</option>
-                  <option value="Roti">Roti</option>
-                  <option value="Nasi">Nasi</option>
-                  <option value="Goreng">Goreng</option>
-                  <option value="Minuman">Minuman</option>
-                </select>
+                    <option value="">Select Categories</option>
+                    <option value="Roti">Bread</option>
+                    <option value="Nasi">Rice</option>
+                    <option value="Western">Western</option>
+                    <option value="Signature">Signature</option>
+                    <option value="Noodle">Noodle</option>
+                    <option value="Desert">Desert</option>
+                    <option value="Desert">Drinks</option>
+                    </select>
               </div>
             </div>
 

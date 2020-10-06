@@ -17,7 +17,7 @@
 
             <div class="card-body">
 
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped" style="table-layout:fixed;">
                 <thead>
                     <tr>
                     <th style="width: 5%;">ID</th>

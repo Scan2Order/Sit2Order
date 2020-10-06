@@ -44,10 +44,10 @@
             <div class="list-group" style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.274);">
                 <a href="{{ route('Restaurant.addToCart', ['id' => $product->id])}}" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ $product->name }}</h5>
+                        <h5 class="mb-1" style="font-weight: bolder;">{{ $product->name }}</h5>
                     </div>
-                    <p class="mb-1">{{ $product->description }}</p>
-                    <small>RM {{ number_format($product->price, 2) }}</small>
+                    <p class="mb-1 card-text" style="opacity: 0.7">{{ $product->description }}</p>
+                    <small style="font-weight: bold;">RM {{ number_format($product->price, 2) }}</small>
                 </a>
             </div>
             @endforeach

@@ -32,8 +32,8 @@
               <div class="col-md-6">
                 <select class="form-control" name="categories" id="categories" required>
                     <option value="">Select Categories</option>
-                    <option value="Roti">Bread</option>
-                    <option value="Nasi">Rice</option>
+                    <option value="Bread">Bread</option>
+                    <option value="Rice">Rice</option>
                     <option value="Western">Western</option>
                     <option value="Signature">Signature</option>
                     <option value="Noodle">Noodle</option>

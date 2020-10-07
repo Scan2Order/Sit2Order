@@ -41,6 +41,20 @@ class CartController extends Controller
         return redirect('/menu/shopping-cart');
     }
 
+    public function getIncreaseByOne($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->increaseByOne($id);
+
+        if (count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+        return redirect('/menu/shopping-cart');
+    }
+
     public function getRemoveItem($id)
     {
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
@@ -70,10 +84,11 @@ class CartController extends Controller
         if (!Session::has('cart')) {
             return view('Restaurant.RestaurantCart');
         }
+        $user = auth()->user();
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
-        return view('Restaurant.RestaurantCheckout', ['total' => $total]);
+        return view('Restaurant.RestaurantCheckout', ['total' => $total, 'user' => $user]);
     }
 
     public function postCheckout(Request $request)

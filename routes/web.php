@@ -110,6 +110,10 @@ Route::get('/reduce/{id}', [
     'uses' => 'CartController@getReduceByOne',
     'as' => 'Restaurant.reduceByOne'
 ]);
+Route::get('/increase/{id}', [
+    'uses' => 'CartController@getIncreaseByOne',
+    'as' => 'Restaurant.increaseByOne'
+]);
 Route::get('/remove/{id}', [
     'uses' => 'CartController@getRemoveItem',
     'as' => 'Restaurant.remove'

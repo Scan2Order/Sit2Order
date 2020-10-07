@@ -1,36 +1,52 @@
 .rating {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center
+    justify-content: center;
 }
 
-.rating>input {
-    display: none
+.rating > input {
+    display: none;
 }
 
-.rating>label {
+.rating > label {
     position: relative;
     width: 1em;
     font-size: 6vw;
-    color: #FFD600;
-    cursor: pointer
+    color: #ffd600;
+    cursor: pointer;
 }
 
-.rating>label::before {
+.rating > label::before {
     content: "\2605";
     position: absolute;
-    opacity: 0
+    opacity: 0;
 }
 
-.rating>label:hover:before,
-.rating>label:hover~label:before {
-    opacity: 1 !important
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+    opacity: 1 !important;
 }
 
-.rating>input:checked~label:before {
-    opacity: 1
+.rating > input:checked ~ label:before {
+    opacity: 1;
 }
 
-.rating:hover>input:checked~label:before {
-    opacity: 0.4
+.rating:hover > input:checked ~ label:before {
+    opacity: 0.4;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f8fafc;
+    background: url(./assets/gradient.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }

@@ -13,20 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
 //default route
-Route::get('/', function () {
+Route::get('/register', function () {
     return redirect('/register');
 });
 
 Route::post('/user/rate/{id}', 'UserProfileController@rate');
 Route::get('/user/rate/{id}', 'UserProfileController@createRate');
 
-Route:: get('Rating', function(){
-return view('/User.UserRating');
+Route::get('Rating', function () {
+    return view('/User.UserRating');
+});
+
+Route::get('/aboutus', function () {
+    return view('aboutUs');
 });
 
 
@@ -134,5 +138,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/menu', 'ProductController@getAllProducts');
     Route::get('/restaurant', 'RestaurantController@index')->name('home');
     Route::get('/superadministrator', 'UserShowController@getAllUsers')->name('superadministrator');
-    
 });

@@ -22,7 +22,8 @@
             <div class="panel-footer">
             </br>
                 <strong>Total Price : RM {{$order->cart->totalPrice}}</strong>
-                <strong>Table Number {{$order->table}}</strong>
+            </br>
+                <strong>Table Number : {{$order->table}}</strong>
             </div>
         </div>
         <hr>

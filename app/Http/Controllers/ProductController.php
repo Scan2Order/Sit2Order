@@ -80,3 +80,4 @@ class ProductController extends Controller
         return view('Restaurant/restaurant-assets/EditMenu', ['id' => $id]);
     }
 }
+

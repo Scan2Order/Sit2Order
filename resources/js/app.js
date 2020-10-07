@@ -7,7 +7,7 @@
 require("./bootstrap");
 
 window.Vue = require("vue");
-
+import StarRating from 'vue-star-rating'
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +27,13 @@ Vue.component(
     "rest-total",
     require("./components/Admin/totalRestaurant.vue").default
 );
+
+Vue.component("Shoppingcart", require("./components/User/shoppingcart.vue").default
+);
+Vue.component("Rating", require("./components/User/UserRating.vue"),StarRating.default
+);
+
+Vue.component('star-rating', StarRating);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

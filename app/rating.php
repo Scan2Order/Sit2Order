@@ -14,4 +14,8 @@ class rating extends Model
     {
         return $this->belongsToMany('App/User', 'user_ratings');
     }
+   
+    protected $fillable = [
+        'rating_id', 'user_id',
+    ];
 }

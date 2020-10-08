@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cart;
+use App\User;
 use App\order;
 use App\product;
 use Session;
@@ -32,6 +33,20 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->reduceByOne($id);
+
+        if (count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+        return redirect('/menu/shopping-cart');
+    }
+
+    public function getIncreaseByOne($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->increaseByOne($id);
 
         if (count($cart->items) > 0) {
             Session::put('cart', $cart);
@@ -70,13 +85,14 @@ class CartController extends Controller
         if (!Session::has('cart')) {
             return view('Restaurant.RestaurantCart');
         }
+        $user = auth()->user();
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
-        return view('Restaurant.RestaurantCheckout', ['total' => $total]);
+        return view('Restaurant.RestaurantCheckout', ['total' => $total, 'user' => $user]);
     }
 
-    public function postCheckout(Request $request)
+    public function postCheckout(Request $request, User $id)
     {
         if (!Session::has('cart')) {
             return view('Restaurant.RestaurantCart');
@@ -89,11 +105,11 @@ class CartController extends Controller
         $order->address = $request->input('address');
         $order->name = $request->input('name');
         $order->table = $request->input('table');
-        $order->restaurant_id = 1;
+
 
         Auth::user()->orders()->save($order);
 
         Session::forget('cart');
-        return redirect('/menu')->with('success', 'Successfully purchased products!');
+        return redirect('/success');
     }
 }

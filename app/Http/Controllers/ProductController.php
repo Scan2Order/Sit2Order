@@ -61,7 +61,6 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'categories' => 'required',
-            'description' => 'required',
             'price' => 'required'
         ]);
 
@@ -73,12 +72,12 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('/restaurant/menu');
+        return view('Restaurant/restaurant-assets/EditMenu');
     }
 
     public function create($id)
     {
-        return view('Restaurant/restaurant-assets/EditMenu', ['id' => $id]);
+        $product = product::findOrFail($id);
+        return view('Restaurant/restaurant-assets/EditMenu', ['id' => $id, 'product' => $product]);
     }
 }
-

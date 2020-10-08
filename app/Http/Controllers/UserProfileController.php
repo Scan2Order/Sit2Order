@@ -55,6 +55,7 @@ class UserProfileController extends Controller
     {
         $order = order::findOrFail($id);
         $order->rating = $request->rating;
+        $order->comment = $request->comment;
         $order->save();
 
         return redirect('/user');

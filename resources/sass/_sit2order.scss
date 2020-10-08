@@ -1,25 +1,25 @@
-.basecard {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0rem;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border-radius: 0.25rem;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-    background: rgba(255,255,255,0.8);
-    border: none;
+// .basecard {
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     min-width: 0rem;
+//     word-wrap: break-word;
+//     background-color: #fff;
+//     background-clip: border-box;
+//     border-radius: 0.25rem;
+//     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+//     background: rgba(255,255,255,0.8);
+//     border: none;
 
-}
+// }
 
-.othercontainer {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+// .othercontainer {
+//     width: 100%;
+//     padding-right: 15px;
+//     padding-left: 15px;
+//     margin-right: auto;
+//     margin-left: auto;
+// }
 
 // div.stars{
 //     width: 270px;
@@ -43,7 +43,6 @@
 //     color: #FD4;
 //     transition: all .25s;
 // }
-
 
 // input.star-5:checked ~ label.star:before {
 //     color:#FE7;
@@ -86,8 +85,6 @@
 //     transition:opacity .25s;
 // }
 
-
-
 // input.star:checked ~ .rev-box{
 //     height: 125px;
 //     overflow: visible;
@@ -129,8 +126,3 @@
 // .rating:hover>input:checked~label:before {
 //     opacity: 0.4
 // }
-
-
-
-
-

@@ -20,6 +20,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sit2order.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -50,6 +52,9 @@
                         @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('aboutus') }}">{{ __('About Us') }}</a>
                         </li>
                         @endif
                         @else

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\order;
 use Illuminate\Http\Request;
 use App\User;
 use App\restaurant;
@@ -19,9 +20,11 @@ class UserShowController extends Controller
         $users = User::get();
         $roles =  User::whereRoleIs('restaurant')->get();
         $restaurants = restaurant::get();
+        $orderCount = order::get();
+        $orderCount = order::count();
         $userCount = User::count();
         $restCount = restaurant::count();
-        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants, 'roles' => $roles]);
+        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants, 'roles' => $roles, 'orderCount' => $orderCount]);
     }
 
     public function destroyUser($id)

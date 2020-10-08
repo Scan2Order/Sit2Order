@@ -15,6 +15,9 @@
                         <div class="col-sm-6">
                             <rest-total :total-restaurant="{{$restCount}}"></rest-total>
                         </div>
+                        <div class="col-sm-6">
+                            <order-total :total-order="{{$orderCount}}"></order-total>
+                        </div>
                     </div>
 
                     <div class="card-body">

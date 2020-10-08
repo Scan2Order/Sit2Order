@@ -19,8 +19,13 @@ class RestaurantController extends Controller
     public function index()
     {
         $user = auth()->user();
+        $orderCount = order::get();
+        $orderCount = order::count();
+        $productCount = product::get();
+        $productCount = product::count();
+        $orders = order::get();
         // dd($user);
-        return view('Restaurant/RestaurantDashboard', ['user' => $user]);
+        return view('Restaurant/RestaurantDashboard', ['user' => $user, 'orderCount' => $orderCount, 'productCount' => $productCount, 'orders' => $orders]);
     }
 
     public function getAllProducts()

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@if(Session::has('success'))
+{{-- @if(Session::has('success'))
 <div class="row">
   <div class="col-md-12">
     <div id="charge-message" class="alert alert-success">
@@ -9,7 +9,7 @@
     </div>
   </div>
 </div>
-@endif
+@endif --}}
 
 <div class="container">
     <div class="card" style="align-items: center;">

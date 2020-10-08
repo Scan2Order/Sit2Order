@@ -33,6 +33,10 @@ Route::get('/aboutus', function () {
     return view('aboutUs');
 });
 
+Route::get('/success', function () {
+    return view('Restaurant/restaurant-assets/orderSuccess');
+});
+
 
 Auth::routes();
 

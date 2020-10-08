@@ -31,6 +31,9 @@ return view('/User.UserRating');
 
 
 Auth::routes();
+Route:: get('Home Page', function(){
+return view('/User.homepage');
+});
 
 //User Routes
 Route::get('/user', 'UserProfileController@index')->name('user');

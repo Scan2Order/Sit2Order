@@ -58,4 +58,7 @@
             </div>
         </div>
         <br />
+
+        <style>
+    
 @endsection

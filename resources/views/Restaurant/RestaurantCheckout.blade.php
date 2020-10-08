@@ -13,7 +13,7 @@
             {{method_field('post')}}
             <div class="form-group">
                 <div class="form-group">
-                <input type="text" placeholder="Full Name" id="name" class="form-control" name="name" value="{{$user->name}}" disabled>
+                <input type="text" placeholder="Full Name" id="name" class="form-control" name="name" value="{{$user->name}}" readonly>
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="Address" id="address" class="form-control" name="address" required>

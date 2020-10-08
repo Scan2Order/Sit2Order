@@ -109,6 +109,6 @@ class CartController extends Controller
         Auth::user()->orders()->save($order);
 
         Session::forget('cart');
-        return redirect('/menu')->with('success', 'Successfully purchased products!');
+        return redirect('/success');
     }
 }

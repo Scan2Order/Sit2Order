@@ -35,6 +35,12 @@
                     <div class="form-group col-md-2">
                         <input type="text" placeholder="CVC" id="card-cvc" class="form-control" required>
                     </div>
+
+                </div>
+                <hr>
+                <h5>Enter Your Table Number :</h5>
+                <div class="form-group">
+                    <input type="text" placeholder="Table number" id="table-number" class="form-control" name="table" required>
                 </div>
             </div>
             <button type="submit" class="btn btn-success btn-lg btn-block">Place Order</button>

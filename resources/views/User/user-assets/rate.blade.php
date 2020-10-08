@@ -1,7 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-                                <form method="POST" action="/user/rate/{{$order->id}}">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">How was your experience?</div>
+
+                <div class="card-body">
+                    <form method="POST" action="/user/rate/{{$order->id}}">
+                        {{ csrf_field() }}
+                        {{method_field('post')}}
+                        <div class="rating">
+                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg btn-block" style="background: rgba(47, 24, 70, 0.897);">Rate</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+                                {{-- <form method="POST" action="/user/rate/{{$order->id}}">
                                 {{ csrf_field() }}
                                 {{method_field('post')}}
                                 <!-- Button trigger modal -->
@@ -44,5 +69,79 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </form> --}}
+
+<style>
+    /* div.stars{
+    width: 270px;
+    display: inline-block;
+}
+
+input.star{
+    display: none;
+}
+
+label.star {
+    float: right;
+    padding: 10px;
+    font-size: 36px;
+    color: #444;
+    transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+    content:'\f005';
+    color: #FD4;
+    transition: all .25s;
+}
+
+
+input.star-5:checked ~ label.star:before {
+    color:#FE7;
+    text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before {
+    color: #F62;
+}
+
+label.star:hover{
+    transform: rotate(-15deg) scale(1.3);
+}
+
+label.star:before{
+    content:'\f006';
+    font-family: FontAwesome;
+}
+
+.rev-box{
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    transition: all .25s;
+}
+
+textarea.review{
+    background: #222;
+    border: none;
+    width: 100%;
+    max-width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #EEE;
+}
+
+label.review{
+    display: block;
+    transition:opacity .25s;
+}
+
+
+
+input.star:checked ~ .rev-box{
+    height: 125px;
+    overflow: visible;
+} */
+</style>
 @endsection

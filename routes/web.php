@@ -13,11 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//default route
 Route::get('/', function () {
     return view('welcome');
 });
 
-//default route
+
 Route::get('/register', function () {
     return redirect('/register');
 });
@@ -25,14 +26,16 @@ Route::get('/register', function () {
 Route::post('/user/rate/{id}', 'UserProfileController@rate');
 Route::get('/user/rate/{id}', 'UserProfileController@createRate');
 
-Route::get('Rating', function () {
-    return view('/User.UserRating');
-});
+// Route::get('Rating', function () {
+//     return view('/User.UserRating');
+// });
 
+//about us page
 Route::get('/aboutus', function () {
     return view('aboutUs');
 });
 
+//after user successfully order redirect to this page
 Route::get('/success', function () {
     return view('Restaurant/restaurant-assets/orderSuccess');
 });

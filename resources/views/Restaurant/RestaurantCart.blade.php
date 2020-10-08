@@ -15,6 +15,8 @@
                 <div class="dropdown" style="float: right">
                 <button type="button" class="btn btn-secondary btn-sm btn xs dropdown-toggle" data-toggle="dropdown">Edit <span class="caret"></span></button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{{route('Restaurant.increaseByOne', ['id' => $product['item']['id']])}}">+</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('Restaurant.reduceByOne', ['id' => $product['item']['id']])}}">-</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('Restaurant.remove', ['id' => $product['item']['id']])}}">Remove Order</a>

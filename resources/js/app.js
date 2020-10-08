@@ -26,6 +26,14 @@ Vue.component(
     "rest-total",
     require("./components/Admin/totalRestaurant.vue").default
 );
+Vue.component(
+    "order-total",
+    require("./components/Admin/totalOrder.vue").default
+);
+Vue.component(
+    "product-total",
+    require("./components/Admin/totalProduct.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

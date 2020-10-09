@@ -85,65 +85,6 @@
 
             </div>
         </div>
-<<<<<<< HEAD
-    
-  <!--
-        <div class="col-sm-6" id = "card-info">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-body">
-                    <order-total :total-order="{{$orderCount}}"></order-total>
-                </div>
-              </div>
-            </div>
-            
-            <div class = "col-sm-6">
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-body">
-                        <product-total :total-product="{{$productCount}}"></product-total>
-                    </div>
-                </div >
-            </div>
-        -->
-        
-        <div class="container" id = "info-cons">
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="card bg-light mb-3" style="max-width: 18rem;">
-                        <div class="card-body">
-                            <order-total :total-order="{{$orderCount}}"></order-total>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="card bg-light mb-3" style="max-width: 18rem;">
-                        <div class="card-body">
-                            <product-total :total-product="{{$productCount}}"></product-total>
-                        </div>
-                    </div >
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="card" id="card01">
-        <div>
-            User Reviews
-        </div>
-        @foreach($orders as $order)
-        <div class="card mb-3" style="max-width: 900px;">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" class="card-img" alt="user icon">
-              </div>
-              <div class="col-md-6">
-                <div class="card-body">
-                <h5 class="card-title">{{$order->name}}</h5>
-                @for($i=0;$i<$order->rating;$i++)
-                <label> &#11088;</label>
-                @endfor
-                <p class="card-text">{{$order->comment}}</p>
-                <p class="card-text"><small class="text-muted">by <b>{{$order->name}}</b> {{$order->created_at}}</small></p>
-=======
 
     <br/>
 
@@ -174,17 +115,8 @@
                     </div>
                 </div>
                 @endforeach
->>>>>>> Fahmiport
                 </div>
             </div>
-<<<<<<< HEAD
-          </div>☆
-
-          
-          
-          @endforeach
-=======
->>>>>>> Fahmiport
         </div>
     </div>
 </div>

@@ -206,3 +206,19 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
+/* .carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    } */
+.carousel-item {
+    height: 32rem;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    }

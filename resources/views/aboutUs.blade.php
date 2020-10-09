@@ -1,9 +1,104 @@
-@extends('layouts.app')
+@extends('layouts.app4')
 
 @section('content')
 
+
+{{-- <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://i.insider.com/5be99c6b48eb1201722b8b23?width=1200&format=jpeg" alt="First slide" style="">
+            <div class ="carousel-caption">
+                <h1 class="display-0">Welcome to Sit2Order</h1>
+                <h3>Where Ordering made Easy</h3>
+                <a href = "http://localhost:3010/menu">
+                    <button class="btn btn-primary">Order Now</button>
+                    <a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://miro.medium.com/max/3200/0*USQ4Z8tJUadBegd2" alt="Second slide">
+            <div class ="carousel-caption">
+                <h1 class="display-1">Welcome to Sit2Order</h1>
+                <h3>Where Ordering made Easy</h3>
+                <a href = "http://localhost:3010/menu">
+                    <button class="btn btn-primary">Order Now</button>
+                    <a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://static.timesofisrael.com/www/uploads/2018/07/hamburger.jpg" alt="Third slide">
+            <div class ="carousel-caption">
+                <h1 class="display-2">Welcome to Sit2Order</h1>
+                <h3>Where Ordering made Easy</h3>
+                <a href = "http://localhost:3010/menu">
+                    <button class="btn btn-primary">Order Now</button>
+                    <a>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+
+    </div>
+    </header>
+<div class="container"> --}}
+
 <!--Slide Section-->
-<div id="slides" class="carousel slide" data-ride="carousel">
+
+    {{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('https://i.insider.com/5be99c6b48eb1201722b8b23?width=1200&format=jpeg')">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="display-4">First Slide</h3>
+                <p class="lead">This is a description for the first slide.</p>
+            </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1920x1080')">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="display-4">Second Slide</h3>
+                <p class="lead">This is a description for the second slide.</p>
+            </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://source.unsplash.com/O7fzqFEfLlo/1920x1080')">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="display-4">Third Slide</h3>
+                <p class="lead">This is a description for the third slide.</p>
+            </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+    </div>
+ --}}
+
+{{-- <div id="slides" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
         <li data-target="#slides" data-slide-to="0" class="active"></li>
         <li data-target="#slides" data-slide-to="1"></li>
@@ -11,7 +106,7 @@
     </ul>
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="https://i.insider.com/5be99c6b48eb1201722b8b23?width=1200&format=jpeg" width="1900">
+            <img src="https://i.insider.com/5be99c6b48eb1201722b8b23?width=1200&format=jpeg">
             <div class ="carousel-caption">
                 <h1 class="display-0">Welcome to Sit2Order</h1>
                 <h3>Where Ordering made Easy</h3>
@@ -21,7 +116,7 @@
             </div>
         </div>
         <div class ="carousel-item">
-            <img src="https://miro.medium.com/max/3200/0*USQ4Z8tJUadBegd2 " width="1900">
+            <img src="https://miro.medium.com/max/3200/0*USQ4Z8tJUadBegd2 ">
             <div class ="carousel-caption">
                 <h1 class="display-1">Welcome to Sit2Order</h1>
                 <h3>Where Ordering made Easy</h3>
@@ -41,10 +136,11 @@
             </div>
         </div>
 </div>
-</div>
+</div> --}}
+
 
 <!--Welcome Section-->
-<div class = "container-fluid padding">
+{{-- <div class = "container-fluid padding">
 <div class = "row welcome text-center">
     <div class="col-12">
         <h1 class="display-4">Order has made with ease</h1>
@@ -188,10 +284,10 @@
 
 
     </div>
-</div>
+</div> --}}
 
 <!--Footer-->
-<footer>
+{{-- <footer>
     <div class = "container-fluid padding">
         <div class = "row text-center">
         <div class = "col-md-4">
@@ -224,40 +320,141 @@
   <h5>Sit2Order.com</h5>
     </div>
 </div>
-</footer>
+</footer> --}}
 
 
-
-
-
+{{--
+</div>
+<div class="container-fluid pb-0 mb-0 justify-content-center text-light " style="overflow: hidden;
+margin-top: 250px;
+background: #262626;
+color: #627482 !important;
+margin-bottom: 0;
+padding-bottom: 0;">
+    <footer>
+        <div class="row my-5 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Sit2Order</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                        <ul class="list-unstyled">
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Blog</li>
+                            <li>Portfolio</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                        <p class="mb-1">Cheras, Kuala Lumpur, 672727</p>
+                        <p class="mb-1">Pandan Indah, Kuala Lumpur, 67732</p>
+                        <p class="mb-1">Taman Dagang, Ampang, 45456</p>
+                        <p class="mb-1">Cyberjaya, Selangor,68888</p>
+                        <p>Seremban, Negeri Sembilan, 76878</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Sit2Order Rights Reserved.</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>ANIRUDH SINGLA</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> anirudh@gmail.com</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                        <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 
 <style>
-.display-4{
-    color: white;
+body {
+    background: linear-gradient(0deg, #fff, 50%, #DEEEFE);
+    font-family: 'Rubik', sans-serif;
+    background: #455A64;
+    height: 100 !important
 }
 
-.lead{
-    color:white;
+.container-fluid {
+    overflow: hidden;
+    margin-top: 250px;
+    background: #262626;
+    color: #627482 !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-h3{
-    color:white;
+small {
+    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
 }
 
-p{
-color:white;
+.bold-text {
+    color: #989c9e !important
 }
 
-h1{
-    color:white;
+.mt-55 {
+    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
 }
 
-.card-text{
-    color:black;
+h3 {
+    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
 }
 
-h5{
-    color: white;
+.social {
+    font-size: 21px !important
 }
-</style>
+
+.rights {
+    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+}
+</style> --}}
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('https://img2.goodfon.com/wallpaper/nbig/c/4e/pasta-eggs-chef-wheat-flour.jpg')">
+          <div class="carousel-caption">
+            <div class ="carousel-caption">
+                <h3 class="">Sit2Order</h3>
+                <p class="lead">Easier way to order</p>
+            </div>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('https://images7.alphacoders.com/417/thumb-1920-417025.jpg')">
+          <div class="carousel-caption">
+            <h3 class="display-4">The most simplest way</h3>
+            <p class="lead">You can now order with ease and calm.</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('https://a12.d35.myftpupload.com/wp-content/uploads/2020/03/o-CELL-PHONE-facebook.jpg?time=1591835016')">
+          <div class="carousel-caption">
+            <h3 class="display-4">All on your fingertips</h3>
+            <p class="lead">Where system is design for people everyday problem. Where it change people
+                daily life.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+    </div>
+</header>
+
 @endsection

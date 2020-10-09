@@ -1,4 +1,21 @@
 <body>
+
+    <div class="area" >
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
     <div class="context">
         <h1>Thank You for</br>Your Order!</h1>
     </br>
@@ -6,22 +23,6 @@
             <button class="button">Back to menu</button>
         </form>
     </div>
-
-
-<div class="area" >
-            <ul class="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
-</div >
 
 <style>
     @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
@@ -223,5 +224,11 @@ body{
 .button:focus { outline:0; }
 </style>
 
+<script>
+    window.onload = function(){
+document.querySelector('.cont_principal').className= "cont_principal cont_error_active";
+
+}
+</script>
 
 </body>

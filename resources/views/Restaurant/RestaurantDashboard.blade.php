@@ -66,6 +66,36 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-6">
+            <order-total :total-order="{{$orderCount}}"></order-total>
+        </div>
+        <div class="col-sm-6">
+            <product-total :total-product="{{$productCount}}"></product-total>
+        </div>
+        <div class="card">
+        <div>
+            User Reviews
+        </div>
+        @foreach($orders as $order)
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" class="card-img" alt="user icon">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">{{$order->name}}</h5>
+                @for($i=0;$i<$order->rating;$i++)
+                <label>☆</label>
+                @endfor
+                <p class="card-text">{{$order->comment}}</p>
+                <p class="card-text"><small class="text-muted">by <b>{{$order->name}}</b> {{$order->created_at}}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
     </div>
 </div>
 @endsection

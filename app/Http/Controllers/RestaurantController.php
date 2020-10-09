@@ -47,6 +47,7 @@ class RestaurantController extends Controller
         $user = User::findOrFail(auth()->id());
         $user->name = $request->name;
         $user->phone = $request->phone;
+        $user->address = $request->address;
 
         $user->save();
 

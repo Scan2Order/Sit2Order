@@ -18,6 +18,10 @@
                             <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
                             <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                         </div>
+                        <div>
+                            <h1 class="row justify-content-center">Leave a Comment</h1>
+                            <textarea name="comment" id="user-comment"></textarea>
+                        </div>
                         <button type="submit" class="btn btn-dark btn-lg btn-block" style="background: rgba(47, 24, 70, 0.897);">Rate</button>
                     </form>
                 </div>

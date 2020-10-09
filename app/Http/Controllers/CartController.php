@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cart;
+use App\User;
 use App\order;
 use App\product;
 use Session;
@@ -91,7 +92,7 @@ class CartController extends Controller
         return view('Restaurant.RestaurantCheckout', ['total' => $total, 'user' => $user]);
     }
 
-    public function postCheckout(Request $request)
+    public function postCheckout(Request $request, User $id)
     {
         if (!Session::has('cart')) {
             return view('Restaurant.RestaurantCart');
@@ -104,7 +105,7 @@ class CartController extends Controller
         $order->address = $request->input('address');
         $order->name = $request->input('name');
         $order->table = $request->input('table');
-        $order->restaurant_id = 1;
+
 
         Auth::user()->orders()->save($order);
 

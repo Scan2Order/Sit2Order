@@ -72,7 +72,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return view('Restaurant/restaurant-assets/EditMenu');
+        return redirect('/restaurant/menu');
     }
 
     public function create($id)

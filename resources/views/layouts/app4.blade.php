@@ -16,21 +16,20 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/sit2order.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/sit2order.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/aboutus.css') }}" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #202020">
             <div class="container">
-                <img src="./images/logo1.png" />
-                <a class="navbar-brand">
+                <img src="https://cdn.discordapp.com/attachments/665569979843870723/758312267279761408/logo1.png" />
+            <a class="navbar-brand" href="{{ url('/menu')}}">
                     {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -54,22 +53,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('aboutus') }}">{{ __('About Us') }}</a>
-                        </li>
                         @endif
                         @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/user') }}">{{  Auth::user()->name  }}</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ __('') }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/aboutus') }}">{{ __('About Us') }}</a>
+                        </li>
+                        <li>
+                            <div class="nav-item" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -84,7 +79,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

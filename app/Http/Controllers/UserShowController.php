@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\restaurant;
 use Auth;
+use Laratrust\Laratrust;
+use App\Role;
 
 class UserShowController extends Controller
 {
@@ -52,8 +54,9 @@ class UserShowController extends Controller
     public function getAllRestaurant()
     {
         // $restaurants = restaurant::get();
-        $roles =  User::whereRoleIs('restaurant')->get();
-        return view('Admin.admin-assets.AddRestaurant', ['roles' => $roles]);
+        $user =  User::findOrFail(2);
+        // dd($roles);
+        return view('Admin.admin-assets.AddRestaurant', ['user' => $user]);
     }
 
     //Restaurant Update

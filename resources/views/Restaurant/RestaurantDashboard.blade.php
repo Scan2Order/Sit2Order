@@ -108,26 +108,24 @@
                 @foreach($orders as $order)
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" style="background: none;">
-                @if($order->rating == 0)
-        @else
-                <div class="card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-md-1" style="">
-                            <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" class="card-img" alt="user icon" style="text-align: center;">
+                    @if($order->rating == 0)
+                    @else
+                        <div class="row no-gutters">
+                            <div class="col-md-1" style="">
+                                <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" class="card-img" alt="user icon" style="text-align: center;">
+                            </div>
+                            <div class="col-md-11">
+                                <h5 class="card-title" style="font-weight: bolder">{{$order->name}}</h5>
+                                @for($i=0;$i<$order->rating;$i++)
+                                <span class="fa fa-star checked" style="color: orange;"></span>
+                                @endfor
+                                <p class="card-text">{{$order->comment}}</p>
+                                <p class="card-text"><small class="text-muted">by <b>{{$order->name}}</b> {{$order->created_at}}</small></p>
+                            </div>
                         </div>
-                        <div class="col-md-11">
-                            <h5 class="card-title" style="font-weight: bolder">{{$order->name}}</h5>
-                            @for($i=0;$i<$order->rating;$i++)
-                            <span class="fa fa-star checked" style="color: orange;"></span>
-                            @endfor
-                            <p class="card-text">{{$order->comment}}</p>
-                            <p class="card-text"><small class="text-muted">by <b>{{$order->name}}</b> {{$order->created_at}}</small></p>
-                        </div>
-                    </div>
                     </li>
                 </ul>
                 <hr>
-                </div>
                 @endif
                 @endforeach
                 </div>

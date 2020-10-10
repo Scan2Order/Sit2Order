@@ -232,3 +232,12 @@ body {
 
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: rgb(60, 33, 88);
+}
+
+.nav-pills .nav-link, .nav-pills .show > .nav-link {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}

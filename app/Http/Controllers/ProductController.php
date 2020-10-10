@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Filters\filter;
 use App\Filters\productFilter;
+use App\order;
 use Illuminate\Http\Request;
 use App\product;
 use Auth;
@@ -18,7 +19,8 @@ class ProductController extends Controller
     public function getAllProducts(productFilter $filter)
     {
         $products = $this->getProducts($filter);
-        return view('Restaurant.RestaurantMenuShow', ['products' => $products]);
+        $orders = order::get();
+        return view('Restaurant.RestaurantMenuShow', ['products' => $products , 'orders' => $orders]);
     }
 
     public function store()

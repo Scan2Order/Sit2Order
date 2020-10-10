@@ -7,17 +7,42 @@
             <div class="col-md-8">
                 <div class="basecard">
                     <div class="card-header">{{ __('Admin Dashboard') }}</div>
+                    <div class="card-body">
                     <div class="row">
-
-                        <div class="col-sm-6">
-                            <user-total :total-user="{{$userCount}}"></user-total>
+                        <div class="col-sm-4" style="margin-bottom: 10px">
+                            <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897); margin-bottom: 10px;">
+                                <div class="card-body" style="background:rgba(47, 24, 70, 0.897);">
+                                    <div class="rotate">
+                                        <i></i>
+                                    </div>
+                                    <h6 class="text-uppercase">Users</h6>
+                                    <h1 class="display-4">{{$userCount}}</h1>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <rest-total :total-restaurant="{{$restCount}}"></rest-total>
+                        <div class="col-sm-4" style="margin-bottom: 10px">
+                            <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897); margin-bottom: 10px;">
+                                <div class="card-body" style="background:rgba(47, 24, 70, 0.897);">
+                                    <div class="rotate">
+                                        <i></i>
+                                    </div>
+                                    <h6 class="text-uppercase">Restaurants</h6>
+                                    <h1 class="display-4">{{$restCount}}</h1>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <order-total :total-order="{{$orderCount}}"></order-total>
+                        <div class="col-sm-4" style="margin-bottom: 10px">
+                            <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897); margin-bottom: 10px;">
+                                <div class="card-body" style="background:rgba(47, 24, 70, 0.897);">
+                                    <div class="rotate">
+                                        <i></i>
+                                    </div>
+                                    <h6 class="text-uppercase">Orders</h6>
+                                    <h1 class="display-4">{{$orderCount}}</h1>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                     </div>
 
                     <div class="card-body">

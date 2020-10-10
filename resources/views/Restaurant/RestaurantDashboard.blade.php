@@ -32,8 +32,17 @@
                         font-weight: 300;
                         text-align: center;
                         margin-bottom: 1.3em;">{{$user->email}}</p>
+                        <p class="description" style="
+                        color: #080911;
+                        font-size: 14px;
+                        font-weight: 300;
+                        text-align: center;
+                        margin-bottom: 1.3em;">{{$user->address}}</p>
                         <a class="btn" href="restaurant/{{$user->id}}" role="button"
                         style="
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         color: #fff;
                         width: 200px;
                         outline: none;
@@ -58,22 +67,22 @@
             <div class="card">
                 <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-6" style="margin-bottom: 15px">
-                        <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897);">
+                    <div class="col-sm-6" style="margin-bottom: 10px">
+                        <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897); margin-bottom: 47px;">
                             <div class="card-body" style="background:rgba(47, 24, 70, 0.897);">
                                 <div class="rotate">
-                                    <i class="fa fa-user fa-4x"></i>
+                                    <i></i>
                                 </div>
                                 <h6 class="text-uppercase">Orders</h6>
                                 <h1 class="display-4">{{$orderCount}}</h1>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6" style="margin-bottom: 15px">
-                        <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897);">
+                    <div class="col-sm-6" style="margin-bottom: 10px">
+                        <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897); margin-bottom: 47px;">
                             <div class="card-body" style="background: rgba(47, 24, 70, 0.897);">
                                 <div class="rotate">
-                                    <i class="fa fa-user fa-4x"></i>
+                                    <i></i>
                                 </div>
                                 <h6 class="text-uppercase">Products</h6>
                                 <h1 class="display-4">{{$productCount}}</h1>
@@ -97,23 +106,24 @@
                 </div>
                 <div class="card-body">
                 @foreach($orders as $order)
-                <div class="card mb-3">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background: none;">
                     <div class="row no-gutters">
                         <div class="col-md-1" style="">
-                            <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" class="card-img" alt="user icon">
+                            <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" class="card-img" alt="user icon" style="text-align: center;">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$order->name}}</h5>
-                                @for($i=0;$i<$order->rating;$i++)
-                                <label>☆</label>
-                                @endfor
-                                <p class="card-text">{{$order->comment}}</p>
-                                <p class="card-text"><small class="text-muted">by <b>{{$order->name}}</b> {{$order->created_at}}</small></p>
-                            </div>
+                        <div class="col-md-11">
+                            <h5 class="card-title" style="font-weight: bolder">{{$order->name}}</h5>
+                            @for($i=0;$i<$order->rating;$i++)
+                            <span class="fa fa-star checked" style="color: orange;"></span>
+                            @endfor
+                            <p class="card-text">{{$order->comment}}</p>
+                            <p class="card-text"><small class="text-muted">by <b>{{$order->name}}</b> {{$order->created_at}}</small></p>
                         </div>
                     </div>
-                </div>
+                    </li>
+                </ul>
+                <hr>
                 @endforeach
                 </div>
             </div>

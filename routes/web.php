@@ -35,6 +35,8 @@ Route::get('/aboutus', function () {
     return view('aboutUs');
 });
 
+Route::get('/reviews', 'UserProfileController@showUserReview');
+
 //after user successfully order redirect to this page
 Route::get('/success', function () {
     return view('Restaurant/restaurant-assets/orderSuccess');

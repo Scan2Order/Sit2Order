@@ -97,6 +97,8 @@
                 </div>
                 <div class="card-body">
                 @foreach($orders as $order)
+                @if($order->rating == 0)
+        @else
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-1" style="">
@@ -114,6 +116,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
                 </div>
             </div>

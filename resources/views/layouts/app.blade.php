@@ -62,6 +62,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/aboutus') }}">{{ __('About Us') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/reviews') }}">{{ __('Reviews') }}</a>
+                        </li>
                         <li>
                             <div class="nav-item" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

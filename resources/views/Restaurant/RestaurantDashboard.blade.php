@@ -108,6 +108,9 @@
                 @foreach($orders as $order)
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" style="background: none;">
+                @if($order->rating == 0)
+        @else
+                <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-1" style="">
                             <img src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png" class="card-img" alt="user icon" style="text-align: center;">
@@ -124,6 +127,8 @@
                     </li>
                 </ul>
                 <hr>
+                </div>
+                @endif
                 @endforeach
                 </div>
             </div>

@@ -67,4 +67,10 @@ class UserProfileController extends Controller
         $order = order::findOrFail($id);
         return view('User/user-assets/rate', ['user' => $user, 'order' => $order]);
     }
+
+    public function showUserReview()
+    {
+        $orders = order::get();
+        return view('User/user-assets/review', ['orders' => $orders]);
+    }
 }

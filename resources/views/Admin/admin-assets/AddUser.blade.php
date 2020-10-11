@@ -23,8 +23,6 @@
                     <th style="width: 5%;">ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Gender</th>
-                    <th>Phone</th>
                     <th>Action</th>
                     </tr>
                 </thead>
@@ -34,8 +32,6 @@
                     <th style="width: 5%;">{{$user->id}}</th>
                     <td class="norm-space">{{$user->name}}</td>
                     <td class="norm-space">{{$user->email}}</td>
-                    <td class="norm-space">{{$user->gender}}</td>
-                    <td class="norm-space">{{$user->phone}}</td>
                     <td>
                     <a href="/admin/dashboard/user/view/{{$user->id}}">
                         <button class="btn btn-secondary btn-sm">View</button>

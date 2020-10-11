@@ -88,6 +88,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+
+                            <div class="col-md-12">
+                                <p>Sign up as</p>
+                                <input type="radio" id="user" name="role" value="1">
+                                <label for="user">User</label><br>
+                                <input type="radio" id="restaurant" name="role" value="2">
+                                <label for="restaurant">Restaurant</label><br>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0" style="border-bottom: 1px solid rgba(0, 0, 0, 0.125);">
                             <div class="col-md-8 offset-md-2">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">

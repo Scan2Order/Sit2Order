@@ -21,26 +21,23 @@
                                 <tr>
                                     <th style="width: 5%;">ID</th>
                                     <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Address</th>
                                     <th>Action</th>
 
                                 </tr>
                             </thead>
+                            @foreach($users as $user)
                             <tbody>
                                 <tr>
-                                    <th style="width: 5%;">{{$user['id']}}</th>
-                                    <td class="norm-space">{{$user['name']}}</td>
-                                    <td class="norm-space">{{$user['phone']}}</td>
-                                    <td class="norm-space">{{$user['address']}}</td>
+                                    <th style="width: 5%;">{{$user->id}}</th>
+                                    <td class="norm-space">{{$user->name}}</td>
                                     <td>
-                                        <a href="/admin/dashboard/restaurant/view/{{$user['id']}}">
+                                        <a href="/admin/dashboard/restaurant/view/{{$user->id}}">
                                             <button class="btn btn-secondary btn-sm">View</button>
                                         </a>
                                     </td>
                                 </tr>
-
                             </tbody>
+                            @endforeach
                         </table>
                     </div>
                 </div>

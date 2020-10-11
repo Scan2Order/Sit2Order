@@ -6,6 +6,7 @@ use App\Filters\filter;
 use App\Filters\productFilter;
 use Illuminate\Http\Request;
 use App\product;
+use App\User;
 use Auth;
 
 class ProductController extends Controller
@@ -17,8 +18,9 @@ class ProductController extends Controller
 
     public function getAllProducts(productFilter $filter)
     {
+        $restaurant = User::findOrFail(2);
         $products = $this->getProducts($filter);
-        return view('Restaurant.RestaurantMenuShow', ['products' => $products]);
+        return view('Restaurant.RestaurantMenuShow', ['products' => $products, 'restaurant' => $restaurant]);
     }
 
     public function store()

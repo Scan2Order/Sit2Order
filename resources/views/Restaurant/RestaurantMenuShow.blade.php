@@ -10,7 +10,7 @@
   </div>
 </div>
 @endif --}}
-
+<h1>{{$restaurant['name']}}</h1>
 <div class="container">
     <div class="card" style="align-items: center;">
         <ul class="nav" style="margin-top: 20px">

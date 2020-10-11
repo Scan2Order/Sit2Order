@@ -71,4 +71,14 @@ class RestaurantController extends Controller
         });
         return view('Restaurant.RestaurantOrder', ['user' => $user, 'orders' => $orders]);
     }
+
+    public function status($id)
+    {
+        $order = order::findOrFail($id);
+        $order->status = 'done';
+        // dd($order);
+        $order->save();
+
+        return redirect('/restaurant/orders');
+    }
 }

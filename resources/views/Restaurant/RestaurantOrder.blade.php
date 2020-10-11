@@ -27,11 +27,12 @@
             </br>
                 <strong>Table Number : {{$order->table}}</strong>
             </div>
-        <form class="btn-group" action="/restaurant/orders/{{$order->id}}" method="POST">
+        </br>
+            <form action="/restaurant/orders/{{$order->id}}" method="POST">
                     {{ method_field('POST') }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-success btn-xs">Done</button>
-                </form>
+                    <button type="submit" class="btn btn-success btn-lg btn-block btn-sm">Done</button>
+            </form>
         </div>
         <hr>
         @endforeach

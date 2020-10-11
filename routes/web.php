@@ -79,12 +79,12 @@ Route::post('/admin/dashboard/profile/{id}', 'AdminController@update');
 Route::get('/admin/dashboard/profile/{id}', 'AdminController@create');
 
 //edit route for admin manage
-Route::get('/admin/dashboard/user/edit/{id}', 'AdminController@createUser');
-Route::post('/admin/dashboard/user/edit/{id}', 'AdminController@editUser');
-Route::get('/admin/dashboard/restaurant/edit/{id}', 'AdminController@createRestaurant');
-Route::post('/admin/dashboard/restaurant/edit/{id}', 'AdminController@editRestaurant');
+// Route::get('/admin/dashboard/user/edit/{id}', 'AdminController@createUser');
+// Route::post('/admin/dashboard/user/edit/{id}', 'AdminController@editUser');
+// Route::get('/admin/dashboard/restaurant/edit/{id}', 'AdminController@createRestaurant');
+// Route::post('/admin/dashboard/restaurant/edit/{id}', 'AdminController@editRestaurant');
 
-
+//order status manage
 Route::post('/restaurant/orders/{id}', 'RestaurantController@status');
 
 

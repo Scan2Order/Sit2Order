@@ -50,31 +50,31 @@ class AdminController extends Controller
         return view('Admin/admin-assets/profileEditAdmin', ['user' => $user]);
     }
 
-    public function editUser(Request $request, $id)
-    {
-        $roles = Role::all();
-        $user = User::findOrFail($id);
-        $user->syncRoles(explode(',', $request->roles));
-        return redirect('/admin/dashboard/user', ['id' => $id]);
-    }
+    // public function editUser(Request $request, $id)
+    // {
+    //     $roles = Role::all();
+    //     $user = User::findOrFail($id);
+    //     $user->syncRoles(explode(',', $request->roles));
+    //     return redirect('/admin/dashboard/user', ['id' => $id]);
+    // }
 
-    public function createUser($id)
-    {
-        $roles = Role::all();
-        $user = User::findOrFail($id);
-        return view('Admin/admin-assets/editUser', ['id' => $id, 'user' => $user, 'roles' => $roles]);
-    }
+    // public function createUser($id)
+    // {
+    //     $roles = Role::all();
+    //     $user = User::findOrFail($id);
+    //     return view('Admin/admin-assets/editUser', ['id' => $id, 'user' => $user, 'roles' => $roles]);
+    // }
 
-    public function editRestaurant(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
-        $user->syncRoles(explode(',', $request->roles));
-        return redirect('/admin/dashboard/restaurant');
-    }
+    // public function editRestaurant(Request $request, $id)
+    // {
+    //     $user = User::findOrFail($id);
+    //     $user->syncRoles(explode(',', $request->roles));
+    //     return redirect('/admin/dashboard/restaurant');
+    // }
 
-    public function createRestaurant($id)
-    {
-        $user = User::findOrFail($id);
-        return view('Admin/admin-assets/editRestaurant', ['id' => $id, 'user' => $user]);
-    }
+    // public function createRestaurant($id)
+    // {
+    //     $user = User::findOrFail($id);
+    //     return view('Admin/admin-assets/editRestaurant', ['id' => $id, 'user' => $user]);
+    // }
 }

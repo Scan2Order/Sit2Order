@@ -123,7 +123,6 @@ class RegisterController extends Controller
                 return $user;
                 break;
         }
-        dd($user);
         // $user->attachRole('user');
 
     }

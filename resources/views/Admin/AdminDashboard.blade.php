@@ -13,7 +13,7 @@
                             <user-total :total-user="{{$userCount}}"></user-total>
                         </div>
                         <div class="col-sm-6">
-                            <rest-total :total-restaurant="{{$restCount}}"></rest-total>
+                            <rest-total :total-restaurant="{{$roleCount}}"></rest-total>
                         </div>
                         <div class="col-sm-6">
                             <order-total :total-order="{{$orderCount}}"></order-total>
@@ -50,10 +50,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($roles as $role)
+                                @foreach ($restaurants as $restaurant)
                                 <tr>
-                                    <th style="width: 5%;">{{$role->id}}</th>
-                                    <td class="norm-space">{{$role->name}}</td>
+                                    <th style="width: 5%;">{{$restaurant->id}}</th>
+                                    <td class="norm-space">{{$restaurant->name}}</td>
                                 </tr>
                                 @endforeach
 

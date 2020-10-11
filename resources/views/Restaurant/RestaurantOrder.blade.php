@@ -39,6 +39,8 @@
     </div>
 </div>
 
+</br>
+
 <div class="card">
     <div class="card-header">{{$user->name}} Orders History</div>
 

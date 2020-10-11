@@ -25,8 +25,9 @@
 
                                 </tr>
                             </thead>
-                            @foreach($users as $user)
+
                             <tbody>
+                                @foreach($users as $user)
                                 <tr>
                                     <th style="width: 5%;">{{$user->id}}</th>
                                     <td class="norm-space">{{$user->name}}</td>
@@ -36,8 +37,9 @@
                                         </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
-                            @endforeach
+
                         </table>
                     </div>
                 </div>

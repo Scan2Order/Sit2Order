@@ -40,7 +40,7 @@ class LoginController extends Controller
         }
 
         if ($user->hasRole('user')) {
-            $redirectTo = RouteServiceProvider::HOME;
+            return redirect('/menu');
         }
     }
 

@@ -6,7 +6,10 @@
 <div class="card-header">{{$user->name}} orders</div>
 
     <div class="card-body">
+
         @foreach($orders as $order)
+        @if($order->status == 'done')
+        @else
         <div class="panel panel-primary">
             <div class="panel-body">
                 <ul class="list-group">
@@ -25,10 +28,18 @@
             </br>
                 <strong>Table Number : {{$order->table}}</strong>
             </div>
+        <form class="btn-group" action="/restaurant/orders/{{$order->id}}" method="POST">
+                    {{ method_field('POST') }}
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-success btn-xs">Done</button>
+                </form>
         </div>
         <hr>
+        @endif
         @endforeach
+
     </div>
 </div>
 </div>
+
 @endsection

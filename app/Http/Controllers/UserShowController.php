@@ -54,9 +54,9 @@ class UserShowController extends Controller
     public function getAllRestaurant()
     {
         // $restaurants = restaurant::get();
-        $user =  User::findOrFail(2);
+        $users = User::whereRoleIs('restaurant')->get();
         // dd($roles);
-        return view('Admin.admin-assets.AddRestaurant', ['user' => $user]);
+        return view('Admin.admin-assets.AddRestaurant', ['users' => $users]);
     }
 
     //Restaurant Update

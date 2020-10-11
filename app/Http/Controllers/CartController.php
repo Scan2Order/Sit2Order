@@ -104,6 +104,7 @@ class CartController extends Controller
         $order->address = $request->input('address');
         $order->name = $request->input('name');
         $order->table = $request->input('table');
+        $order->status = 'pending';
 
 
         Auth::user()->orders()->save($order);

@@ -19,7 +19,7 @@
                             <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                         </div>
 
-                            <h1 class="row justify-content-center">Leave a Comment</h1>
+                            <h3 class="row justify-content-center">Leave a Comment!</h3>
                             <div class="form-group row">
                         <div class="col-md-12">
                             <textarea name="comment" id="user-comment" placeholder="Add a description" type="text" class="form-control"></textarea>

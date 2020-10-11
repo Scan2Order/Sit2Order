@@ -15,9 +15,9 @@
             </div>
             @endif
 
-            <div class="card-body">
+            <div class="card-body" style="height: 75vh;">
 
-                <table class="table table-bordered table-striped" style="table-layout:fixed;">
+                <table class="table table-bordered table-striped h-100" style="table-layout:fixed;">
                 <thead>
                     <tr>
                     <th style="width: 5%;">ID</th>
@@ -28,7 +28,7 @@
                     <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="max-height: 42rem;">
                     @foreach ($users as $user)
                     <tr>
                     <th style="width: 5%;">{{$user->id}}</th>

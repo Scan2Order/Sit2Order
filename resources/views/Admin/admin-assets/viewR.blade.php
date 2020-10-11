@@ -44,8 +44,17 @@
                     font-weight: 300;
                     text-align: center;
                     margin-bottom: 1.3em;">{{$user->email}}</p>
+                    <p class="description" style="
+                    color: #080911;
+                    font-size: 14px;
+                    font-weight: 300;
+                    text-align: center;
+                    margin-bottom: 1.3em;">{{$user->address}}</p>
                     <a class="btn" href="{{url('/admin/dashboard/restaurant')}}" role="button"
                     style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     color: #fff;
                     width: 200px;
                     outline: none;

@@ -11,7 +11,8 @@
                 position: relative;
                 align-items: center;
                 flex-direction: column;
-                justify-content: center;">
+                justify-content: center;
+                height: 15rem;">
                     <div class="card-body">
                         <h3 class="name" style="
                         font-size: 24px;
@@ -64,7 +65,7 @@
 
         <div class="col-md-6" style="margin-bottom: 20px">
 
-            <div class="card">
+            <div class="card" style="height: 15rem;">
                 <div class="card-body">
                 <div class="row">
                     <div class="col-sm-6" style="margin-bottom: 10px">

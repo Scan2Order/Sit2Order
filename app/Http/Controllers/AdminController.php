@@ -47,7 +47,7 @@ class AdminController extends Controller
     public function create()
     {
         $user = auth()->user();
-        return view('Admin/admin-assets/profileEditAdmin', ['user' => $user]);
+        return view('Admin.admin-assets.ProfileEditAdmin', ['user' => $user]);
     }
 
     // public function editUser(Request $request, $id)

@@ -145,7 +145,7 @@ td {
 .rating > label {
     position: relative;
     width: 1em;
-    font-size: 6vw;
+    font-size: 10vw;
     color: #ffd600;
     cursor: pointer;
 }
@@ -222,3 +222,22 @@ body {
     background-position: center;
     background-size: cover;
     }
+
+.rated {
+    font-size: 20px;
+    color: #ffd600;
+    width: 1em;
+    opacity: 1;
+    content: "\2605";
+
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: rgb(60, 33, 88);
+}
+
+.nav-pills .nav-link, .nav-pills .show > .nav-link {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}

@@ -38,6 +38,13 @@
                 </div>
                 </div>
 
+                    <div class="form-group row">
+
+                        <div class="col-md-12">
+                            <input id="address" type="text" value="{{ $user->address }}" class="form-control" name="address" placeholder="Address" required>
+                        </div>
+                        </div>
+
                 <div class="form-group row mb-0">
                     <div class="col-md-8 offset-md-2">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">

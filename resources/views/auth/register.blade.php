@@ -88,6 +88,23 @@
                             </div>
                         </div>
 
+                        <div class="card-header">
+                            <h2>Sign Up as</h2>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12 d-flex align-items-center justify-content-center">
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="user" name="role" value="1">
+                                <label class="form-check-label" for="user" style="font-weight: bolder">User</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="restaurant" name="role" value="2">
+                                <label class="form-check-label" for="restaurant" style="font-weight: bolder">Restaurant</label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0" style="border-bottom: 1px solid rgba(0, 0, 0, 0.125);">
                             <div class="col-md-8 offset-md-2">
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">

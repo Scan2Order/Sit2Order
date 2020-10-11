@@ -23,7 +23,6 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
-
         $request->session()->put('cart', $cart);
         return redirect('/menu');
     }
@@ -105,6 +104,7 @@ class CartController extends Controller
         $order->address = $request->input('address');
         $order->name = $request->input('name');
         $order->table = $request->input('table');
+        $order->status = 'pending';
 
 
         Auth::user()->orders()->save($order);

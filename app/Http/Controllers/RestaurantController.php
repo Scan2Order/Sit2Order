@@ -47,6 +47,7 @@ class RestaurantController extends Controller
         $user = User::findOrFail(auth()->id());
         $user->name = $request->name;
         $user->phone = $request->phone;
+        $user->address = $request->address;
 
         $user->save();
 
@@ -62,12 +63,29 @@ class RestaurantController extends Controller
     public function getOrder(order $id)
     {
         $user = auth()->user();
-        $orders = order::get();
+        $orders = order::where('status', 'pending')->get();
         $ordersTrans = $orders->transform(function ($order, $key) {
             $order->cart = json_decode($order->cart);
 
             return $order;
         });
-        return view('Restaurant.RestaurantOrder', ['user' => $user, 'orders' => $orders]);
+
+        $dones = order::where('status', 'done')->get();
+        $ordersTransform = $dones->transform(function ($done, $key) {
+            $done->cart = json_decode($done->cart);
+
+            return $done;
+        });
+        return view('Restaurant.RestaurantOrder', ['user' => $user, 'orders' => $orders, 'dones' => $dones]);
+    }
+
+    public function status($id)
+    {
+        $order = order::findOrFail($id);
+        $order->status = 'done';
+        // dd($order);
+        $order->save();
+
+        return redirect('/restaurant/orders');
     }
 }

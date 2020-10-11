@@ -4,6 +4,7 @@ return [
     /**
      * Control if the seeder should create a user per role while seeding the data.
 
+
      */
     'create_users' => true,
 
@@ -23,6 +24,7 @@ return [
             'profile' => 'r,u'
         ],
         'user' => [
+            'users' => 'r',
             'profile' => 'r,u',
         ],
         'role_name' => [

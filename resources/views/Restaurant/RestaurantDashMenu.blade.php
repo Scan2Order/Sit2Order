@@ -4,7 +4,7 @@
 <div class="container">
     <div class="">
         <div class="row justify-content-center">
-            <div class="card">
+            <div class="card h-75" >
                 <div class="card-header">Manage Menu</div>
                     @if (\Session::has('status'))
                     <div class="alert alert-danger">
@@ -14,9 +14,9 @@
                     </div>
                     @endif
 
-                <div class="card-body">
+                <div class="card-body" style="height: 75vh;">
 
-                    <table class="table table-bordered table-striped" style="table-layout:fixed;">
+                    <table class="table table-bordered table-striped h-100" style="table-layout:fixed;">
                     <thead>
                         <tr>
                             <th style="width: 5%;">ID</th>
@@ -27,7 +27,7 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="max-height: 42rem;">
                     @foreach ($products as $product)
                     <tr>
                         <th style="width: 5%;">{{$product->id}}</th>

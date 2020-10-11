@@ -67,4 +67,5 @@ class UserProfileController extends Controller
         $order = order::findOrFail($id);
         return view('User/user-assets/rate', ['user' => $user, 'order' => $order]);
     }
+
 }

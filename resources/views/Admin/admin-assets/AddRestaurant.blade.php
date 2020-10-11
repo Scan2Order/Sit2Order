@@ -25,20 +25,21 @@
 
                                 </tr>
                             </thead>
+
                             <tbody>
-                                @foreach ($roles as $role)
+                                @foreach($users as $user)
                                 <tr>
-                                    <th style="width: 5%;">{{$role->id}}</th>
-                                    <td class="norm-space">{{$role->name}}</td>
+                                    <th style="width: 5%;">{{$user->id}}</th>
+                                    <td class="norm-space">{{$user->name}}</td>
                                     <td>
-                                        <a href="/admin/dashboard/restaurant/view/{{$role->id}}">
+                                        <a href="/admin/dashboard/restaurant/view/{{$user->id}}">
                                             <button class="btn btn-secondary btn-sm">View</button>
                                         </a>
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
+
                         </table>
                     </div>
                 </div>

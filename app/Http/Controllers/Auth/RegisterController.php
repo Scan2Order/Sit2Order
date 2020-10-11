@@ -8,6 +8,9 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Request;
+use Auth;
+use Illuminate\Http\Request as HttpRequest;
 
 class RegisterController extends Controller
 {
@@ -29,7 +32,39 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+
+    protected function registered(HttpRequest $request, $user)
+    {
+        if ($user->hasRole('superadministrator')) {
+            return redirect('/admin/dashboard');
+        }
+
+        if ($user->hasRole('restaurant')) {
+            return redirect('/restaurant');
+        }
+
+        if ($user->hasRole('user')) {
+            return redirect('/menu');
+        }
+    }
+    // public function redirectTo()
+    // {
+    //     $role = Auth::user()->role;
+    //     switch ($role) {
+    //         case 'user':
+    //             return '/menu';
+    //             break;
+    //         case 'restaurant':
+    //             return '/restaurant';
+    //             break;
+
+    //         default:
+    //             return '/menu';
+    //             break;
+    //     }
+    //     dd($role);
+    // }
+
 
     /**
      * Create a new controller instance.
@@ -53,6 +88,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required', 'numeric', 'min:11'],
+            'gender' => ['required', 'string'],
         ]);
     }
 
@@ -64,10 +101,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'phone'  => $data['phone'],
+            'gender' => $data['gender'],
+            // 'role' => $data['role'],
         ]);
+        switch ($data['role']) {
+            case 1:
+                $user->attachRole('user');
+                return $user;
+                break;
+            case 2:
+                $user->attachRole('restaurant');
+                return $user;
+                break;
+            default:
+                $user->attachRole('user');
+                return $user;
+                break;
+        }
+        // $user->attachRole('user');
+
     }
 }

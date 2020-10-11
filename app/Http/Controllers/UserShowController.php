@@ -33,9 +33,7 @@ class UserShowController extends Controller
     public function destroyUser($id)
     {
         $users = User::findOrFail($id);
-        $restaurants = restaurant::findOrFail($id);
         $users->delete();
-        $restaurants->delete();
         return redirect('admin/dashboard/user')->with('status', 'Deleted sucessfully');
     }
 

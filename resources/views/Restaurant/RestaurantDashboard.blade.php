@@ -68,7 +68,7 @@
             <div class="card" style="height: 15rem;">
                 <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-6" style="margin-bottom: 10px">
+                    <div class="col-sm-6">
                         <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897); margin-bottom: 47px;">
                             <div class="card-body" style="background:rgba(47, 24, 70, 0.897);">
                                 <div class="rotate">
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6" style="margin-bottom: 10px">
+                    <div class="col-sm-6">
                         <div class="card text-white h-100" style="background:rgba(47, 24, 70, 0.897); margin-bottom: 47px;">
                             <div class="card-body" style="background: rgba(47, 24, 70, 0.897);">
                                 <div class="rotate">

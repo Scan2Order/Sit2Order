@@ -10,11 +10,13 @@
   </div>
 </div>
 @endif --}}
-<h1>{{$restaurant['name']}}</h1>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
+                <div class="card-header">
+                    {{$restaurant['name']}}
+                </div>
                 <div class="card-body">
                 <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
                     <li class="nav-item">
@@ -49,7 +51,7 @@
                                     <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Noodle">Noodle</a>
                                 </li>
                                 <li class="nav-item" style="font-weight: bolder;">
-                                    <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Desert">Desert</a>
+                                    <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Desert">Dessert</a>
                                 </li>
                                 <li class="nav-item" style="font-weight: bolder;">
                                     <a class="nav-link" style="color: rebeccapurple" href="/menu?categories=Beverages">Beverages</a>

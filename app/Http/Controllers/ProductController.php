@@ -20,8 +20,9 @@ class ProductController extends Controller
     public function getAllProducts(productFilter $filter)
     {
         $restaurant = User::findOrFail(2);
+        $orders = order::get();
         $products = $this->getProducts($filter);
-        return view('Restaurant.RestaurantMenuShow', ['products' => $products, 'restaurant' => $restaurant]);
+        return view('Restaurant.RestaurantMenuShow', ['products' => $products, 'restaurant' => $restaurant , 'orders' => $orders]);
     }
 
     public function store()

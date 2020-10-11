@@ -27,7 +27,7 @@
                                         <i></i>
                                     </div>
                                     <h6 class="text-uppercase">Restaurants</h6>
-                                    <h1 class="display-4">{{$restCount}}</h1>
+                                    <h1 class="display-4">{{$roleCount}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -75,10 +75,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($roles as $role)
+                                @foreach ($restaurants as $restaurant)
                                 <tr>
-                                    <th style="width: 5%;">{{$role->id}}</th>
-                                    <td class="norm-space">{{$role->name}}</td>
+                                    <th style="width: 5%;">{{$restaurant->id}}</th>
+                                    <td class="norm-space">{{$restaurant->name}}</td>
                                 </tr>
                                 @endforeach
 

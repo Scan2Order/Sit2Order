@@ -21,12 +21,13 @@ class UserShowController extends Controller
     {
         $users = User::get();
         $roles =  User::whereRoleIs('restaurant')->get();
-        $restaurants = restaurant::get();
+        $restaurants = User::whereRoleIs('restaurant')->get();
         $orderCount = order::get();
         $orderCount = order::count();
         $userCount = User::count();
         $restCount = restaurant::count();
-        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants, 'roles' => $roles, 'orderCount' => $orderCount]);
+        $roleCount = User::whereRoleIs('restaurant')->count();
+        return view('Admin.AdminDashboard', ['users' => $users, 'userCount' => $userCount, 'restCount' => $restCount, 'restaurants' => $restaurants, 'roles' => $roles, 'orderCount' => $orderCount, 'roleCount' => $roleCount]);
     }
 
     public function destroyUser($id)

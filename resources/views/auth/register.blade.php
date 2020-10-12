@@ -95,11 +95,11 @@
                         <div class="form-group row">
                             <div class="col-md-12 d-flex align-items-center justify-content-center">
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="user" name="role" value="1">
+                                <input class="form-check-input" type="radio" id="user" name="role" value="1" required>
                                 <label class="form-check-label" for="user" style="font-weight: bolder">User</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="restaurant" name="role" value="2">
+                                <input class="form-check-input" type="radio" id="restaurant" name="role" value="2" required>
                                 <label class="form-check-label" for="restaurant" style="font-weight: bolder">Restaurant</label>
                                 </div>
                             </div>

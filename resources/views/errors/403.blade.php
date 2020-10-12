@@ -7,10 +7,6 @@
     <div class="text">
       <span class="hero-text"></span>
       <span class="msg">can't let <span>you</span> in.</span>
-      <span class="support">
-        <span>unexpected?</span>
-        <a href="#">back to home</a>
-      </span>
     </div>
     <div class="lock"></div>
 </div>

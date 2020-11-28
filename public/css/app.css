@@ -2200,11 +2200,6 @@ pre code {
   opacity: 1;
 }
 
-.form-control::-ms-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
-
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
@@ -10928,19 +10923,6 @@ a.text-dark:focus {
   }
 }
 
-body {
-  margin: 0;
-  font-family: "Nunito", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #212529;
-  text-align: left;
-  background-color: #f8fafc;
-  background: url(/images/gradient.jpg?100505800da00eb47894d765f958bf8f);
-  background-size: cover;
-}
-
 .btn-primary {
   margin-top: 40px;
   margin-bottom: 30px;
@@ -11033,27 +11015,5 @@ td {
   float: left;
   width: 2.5rem;
   height: 2.5rem;
-}
-
-.basecard {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0rem;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border-radius: 0.25rem;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-}
-
-.othercontainer {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
 }
 

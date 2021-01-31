@@ -83,7 +83,9 @@ Route::get('/admin/dashboard/profile/{id}', 'AdminController@create');
 // Route::post('/admin/dashboard/restaurant/edit/{id}', 'AdminController@editRestaurant');
 
 //order status manage
-Route::post('/restaurant/orders/{id}', 'RestaurantController@status');
+Route::post('/restaurant/orders/{id}', [RestaurantController::class,'status']);
+
+
 
 
 

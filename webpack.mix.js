@@ -16,11 +16,11 @@ mix.js("resources/js/app.js", "public/js").sass(
     "public/css"
 );
 
-mix.browserSync({
-    proxy: {
-        target: "http://Source.test/",
-        ws: true
-    },
-    port: 3010,
-    reloadOnRestart: true
-});
+// mix.browserSync({
+//     proxy: {
+//         target: "http://Source.test/",
+//         ws: true
+//     },
+//     port: 3010,
+//     reloadOnRestart: true
+// });

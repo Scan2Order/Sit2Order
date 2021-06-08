@@ -124,48 +124,7 @@
                 justify-content: center;
                 height: 17rem;">
                 <div class="card-header">
-                <img src="https://cdn.discordapp.com/attachments/740809976741757008/764767720293662740/me1.jpg" style="width: 100px;
-                height: 100px;
-                display: flex;
-                margin-left: auto;
-                margin-right: auto;
-                border-radius: 100%;
-                box-shadow: $shadow;
-                overflow: hidden;
-                object-fit: cover;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.274);">
-                </div>
-                    <div class="card-body">
-                        <h3 class="name" style="
-                        font-size: 24px;
-                        font-weight: 600;
-                        text-align: center;
-                        color: black;">Muhammad Farris Hirzan Bin Noor Zamrie</h3>
-                        <p class="title" style="
-                        color: #7C8097;
-                        font-size: .75em;
-                        font-weight: 300;
-                        text-align: center;
-                        padding-top: .5em;
-                        padding-bottom: .7em;
-                        letter-spacing: 1.5px;
-                        text-transform: uppercase;">CEO and Founder</p>
-
-                    </div>
-            </div>
-        </div>
-        <div class="col-md-4" style="margin-bottom: 20px">
-
-            <div class="card"
-                style="
-                display: flex;
-                position: relative;
-                align-items: center;
-                flex-direction: column;
-                justify-content: center;
-                height: 17rem;">
-                <div class="card-header">
-                    <img src="https://cdn.discordapp.com/attachments/740809976741757008/764784481584283658/IMG_1102.jpg" style="width: 100px;
+                    <img src="https://cdn.discordapp.com/attachments/823787458701295616/831420815467741205/H5OtJMkD.png" style="width: 100px;
                     height: 100px;
                     display: flex;
                     margin-left: auto;
@@ -181,7 +140,7 @@
                         font-size: 24px;
                         font-weight: 600;
                         text-align: center;
-                        color: black;">Fahmi Mikail Bin Fahrid</h3>
+                        color: black;">Umarul Imran Bin Ahmed Qamal</h3>
                         <p class="title" style="
                         color: #7C8097;
                         font-size: .75em;
@@ -190,51 +149,9 @@
                         padding-top: .5em;
                         padding-bottom: .7em;
                         letter-spacing: 1.5px;
-                        text-transform: uppercase;">UI Designer</p>
+                        text-transform: uppercase;"></p>
                     </div>
             </div>
         </div>
-        <div class="col-md-4" style="margin-bottom: 20px">
-
-            <div class="card"
-                style="
-                display: flex;
-                position: relative;
-                align-items: center;
-                flex-direction: column;
-                justify-content: center;
-                height: 17rem;">
-                <div class="card-header">
-                    <img src="https://cdn.discordapp.com/attachments/731146080699547688/764784798199709736/d84990d7-b62e-4ce9-b2f8-3adaad19e22d.png" style="width: 100px;
-                    height: 100px;
-                    display: flex;
-                    margin-left: auto;
-                    margin-right: auto;
-                    border-radius: 100%;
-                    box-shadow: $shadow;
-                    overflow: hidden;
-                    object-fit: cover;
-                    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.274);">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="name" style="
-                        font-size: 24px;
-                        font-weight: 600;
-                        text-align: center;
-                        color: black;">Jeremiah De Howard Chai</h3>
-                        <p class="title" style="
-                        color: #7C8097;
-                        font-size: .75em;
-                        font-weight: 300;
-                        text-align: center;
-                        padding-top: .5em;
-                        padding-bottom: .7em;
-                        letter-spacing: 1.5px;
-                        text-transform: uppercase;">Web Developer</p>
-
-                    </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
